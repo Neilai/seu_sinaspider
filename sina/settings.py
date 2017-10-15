@@ -10,6 +10,7 @@
 #     http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 import os
 import sys
+COOKIE="UM_distinctid=15c07943354c8-0e8acba75299ea-5b412f19-e1000-15c07943356a0; SINAGLOBAL=6923444749677.232.1494775774189; UOR=www.baidu.com,vdisk.weibo.com,qiusuoge.com; YF-Ugrow-G0=ad83bc19c1269e709f753b172bddb094; SSOLoginState=1508065080; SCF=Au-0ncqPEUka5K9GGf6OW24CTp2jGe8nx00amFHVfbUv-UBe22jFn0zwwTcZfqImmUvxIvKraUFp7O_4SM3A2wo.; SUB=_2A250509oDeRhGeRI6lEQ9irPwj-IHXVXlSegrDV8PUNbmtBeLUenkW8KZhWDUg5KKYZsKoYaqJhjPfKapQ..; SUBP=0033WrSXqPxfM725Ws9jqgMF55529P9D9W5QIV-4QSfrqpOpFqYT3zYh5JpX5KMhUgL.FozceKepSoB01Ke2dJLoIpjLxKnLBo-L1KqLxKqL1K-LB-eLxKBLBo.L12zt; SUHB=0Elru9lKCk3_CT; ALF=1539601079; wvr=6; YF-V5-G0=cd5d86283b86b0d506628aedd6f8896e; _s_tentry=-; Apache=8446668559000.525.1508065083352; ULV=1508065083443:14:1:1:8446668559000.525.1508065083352:1505045240652; wb_cusLike_2613164393=N; YF-Page-G0=bf52586d49155798180a63302f873b5e"
 BASE_DIR = os.path.dirname(os.path.abspath(os.path.dirname(__file__)))
 sys.path.insert(0, os.path.join(BASE_DIR, 'sina'))
 BOT_NAME = 'sina'

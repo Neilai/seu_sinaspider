@@ -2,7 +2,7 @@
 import scrapy
 import json
 import re
-from items import  getnum3,getlocation_gender_name,Sina_Item3
+from items import  getnum3,getlocation_gender_name,Sina_Item3,processcook
 class Sinaspider3Spider(scrapy.Spider):
     custom_settings = {
         'ITEM_PIPELINES': {'sina.pipelines.SinaPipeline3': 400, },
@@ -14,7 +14,6 @@ class Sinaspider3Spider(scrapy.Spider):
     baseurl='https://weibo.cn/u/'
     index=18
     cnt=0
-    cook = {'domain': '.weibo.cn', 'httpOnly': False, 'name': 'SSOLoginState', 'path': '/', 'secure': False, 'value': '1501868580'}, {'domain': '.weibo.cn', 'expiry': 1504460537.575221, 'httpOnly': False, 'name': 'ALF', 'path': '/', 'secure': False, 'value': '1504460579'}, {'domain': '.weibo.cn', 'expiry': 1533404538.458676, 'httpOnly': False, 'name': 'SUHB', 'path': '/', 'secure': False, 'value': '0vJ5gK-4DOqoxn'}, {'domain': '.weibo.cn', 'expiry': 1533404538.458599, 'httpOnly': False, 'name': 'SUBP', 'path': '/', 'secure': False, 'value': '0033WrSXqPxfM725Ws9jqgMF55529P9D9W5QIV-4QSfrqpOpFqYT3zYh5JpX5o2p5NHD95QESo20eKqXe0.0Ws4Dqcjdi--Ri-zfiK.ci--ciK.fi-8hi--Xi-z4iKyF'}, {'domain': '.weibo.cn', 'expiry': 1817228538.4583793, 'httpOnly': True, 'name': 'SCF', 'path': '/', 'secure': False, 'value': 'Amca3i5TurarlUkR7K68Mpj_5LTl8wGOooymms7S0P0_eNp1WTidM3opQhdqM2NyXDfbENYm_XReGduuzTxc4Mk.'}, {'domain': '.weibo.cn', 'expiry': 1501869141.563377, 'httpOnly': True, 'name': 'M_WEIBOCN_PARAMS', 'path': '/', 'secure': False, 'value': 'luicode%3D20000174%26uicode%3D20000174%26featurecode%3D20000320%26fid%3Dhotword'}, {'domain': '.weibo.cn', 'expiry': 1533404538.458504, 'httpOnly': True, 'name': 'SUB', 'path': '/', 'secure': False, 'value': '_2A250gMJ0DeRhGeRI6lEQ9irPwj-IHXVXiu48rDV6PUJbktBeLU_8kW0GtA9FKnBPANtIlJ1TEyxglEPxAw..'}, {'domain': '.weibo.cn', 'expiry': 1504460538.716496, 'httpOnly': True, 'name': '_T_WM', 'path': '/', 'secure': False, 'value': 'ac569e4260797ed951734530fea1d779'}
     def parse(self, response):
       dic=json.loads(response.text)
       uid = []
@@ -45,6 +44,7 @@ class Sinaspider3Spider(scrapy.Spider):
         pass
     def start_requests(self):
         # yield scrapy.Request("https://weibo.cn/u/2290732425",cookies=self.cook)
+        self.cook = processcook(self.settings.get("COOKIE"))
         yield scrapy.Request("https://m.weibo.com/", cookies=self.cook, callback=self.loginsina)
 
     def loginsina(self, response):

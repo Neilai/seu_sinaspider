@@ -3,7 +3,7 @@ import scrapy
 import time
 from selenium import webdriver
 from scrapy.selector import Selector
-from items import SinaItem1,getnum,stripspace,deletespace
+from items import SinaItem1,getnum,stripspace,deletespace,processcook
 import json
 import re
 
@@ -18,12 +18,9 @@ class Sinaspider1Spider(scrapy.Spider):
     page=0
     cnt=1
     baseurl="http://weibo.com/aj/v6/comment/big?ajwvr=6"
-    cook = "SINAGLOBAL=7109480274464.9.150072o2429737; ULV=1504952497736:12:2:1:712661893821.5945.1504952497728:1504336125767; SCF=AiKyEp5Vmuuwd4WoX28qo_vjruD_Ex6Z73YIQi1kjZ3P3grNVQb8uEAWTIvWJI2GSLn4PHdXfmQlrjRSAR4FBgw.; SUHB=0N2EAKzxtxy600; UOR=,,cuiqingcai.com; SUBP=0033WrSXqPxfM725Ws9jqgMF55529P9D9W5QIV-4QSfrqpOpFqYT3zYh5JpX5o2p5NHD95QESo20eKqXe0.0Ws4Dqcjdi--Ri-zfiK.ci--ciK.fi-8hi--Xi-z4iKyF; ALF=1536488413; YF-Ugrow-G0=ea90f703b7694b74b62d38420b5273df; SUB=_2A250t7CKDeRhGeRI6lEQ9irPwj-IHXVXxKVCrDV8PUJbmtBeLW3ykW-crVqocfYcB_NMmASXbyphESRoNA..; SSOLoginState=1504952491; wvr=6; YF-V5-G0=447063a9cae10ef9825e823f864999b0; _s_tentry=-; Apache=712661893821.5945.1504952497728; YF-Page-G0=f994131fbcce91e683b080a4ad83c421"
     # def __init__(self):
-        # chromeOptions = webdriver.ChromeOptions()
-        # prefs = {"profile.managed_default_content_settings.images": 2}
-        # chromeOptions.add_experimental_option("prefs", prefs)
-        # self.browser = webdriver.Chrome(executable_path="D:/chromedriver.exe", chrome_options=chromeOptions)
+    #
+    #     pass
     def parse(self, response):
         result=json.loads(response.text)['data']['html']
         likenum=Selector(text=result).xpath("//div[@class='list_box']/div[@class='list_ul']/div[@comment_id]/div[@class='list_con']/div[contains(@class,'WB_func')]//span[@node-type='like_status']/em[2]/text()").extract()
@@ -46,6 +43,7 @@ class Sinaspider1Spider(scrapy.Spider):
 
     def start_requests(self):
         # yield scrapy.Request("http://weibo.com/aj/v6/comment/big?ajwvr=6&filter=all&id=4121910092307199&page=1", cookies=self.cook)
+        self.cook = processcook(self.settings.get("COOKIE"))
         yield scrapy.Request("https://www.weibo.com/",cookies=self.cook,callback=self.loginsina)
     def loginsina(self,response):
         # time.sleep(10)

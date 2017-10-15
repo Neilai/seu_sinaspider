@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import scrapy
 import re
-from items import SinaItem4
+from items import SinaItem4,processcook
 
 class Sinaspider4Spider(scrapy.Spider):
     name = 'sinaspider4'
@@ -11,7 +11,6 @@ class Sinaspider4Spider(scrapy.Spider):
     allowed_domains = ['www.weibo.cn']
     start_urls = ['https://weibo.cn/2613164393/fans']
     uid=2613164393
-    cook={'_T_WM': '030c7c02255c85f1c98e7b13e470fc90', 'ALF': '1507604306', 'SCF': 'Au-0ncqPEUka5K9GGf6OW24CTp2jGe8nx00amFHVfbUvx2fgewShd_G_5sGp1lAgCJbjvT4ZeapXHOQpZkVWofM.', 'SUB': '_2A250sNoDDeRhGeRI6lEQ9irPwj-IHXVUWuZLrDV6PUJbktBeLXHxkW1YmOaEkN3ZPC9byX7BuumdNf-i3A..', 'SUBP': '0033WrSXqPxfM725Ws9jqgMF55529P9D9W5QIV-4QSfrqpOpFqYT3zYh5JpX5o2p5NHD95QESo20eKqXe0.0Ws4Dqcjdi--Ri-zfiK.ci--ciK.fi-8hi--Xi-z4iKyF', 'SUHB': '0TPkKyKzEkQUI9'}
 
     baseurl="https://weibo.cn/{0}/fans?page={1}"
 
@@ -57,4 +56,5 @@ class Sinaspider4Spider(scrapy.Spider):
         yield sina_item4
     def start_requests(self):
         # yield scrapy.Request("https://weibo.cn/u/2290732425",cookies=self.cook)
+        self.cook = processcook(self.settings.get("COOKIE"))
         yield scrapy.Request("https://weibo.cn/2613164393/fans", cookies=self.cook, callback=self.parse_url,meta={'level':1,'uid':self.uid})

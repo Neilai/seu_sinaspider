@@ -3,7 +3,7 @@ import scrapy
 import time
 from selenium import webdriver
 from scrapy.selector import Selector
-from items import SinaItem2,getnum,stripspace,deletespace,matchnum
+from items import SinaItem2,getnum,stripspace,deletespace,matchnum,processcook
 import json
 import re
 
@@ -38,6 +38,7 @@ class Sinaspider2Spider(scrapy.Spider):
         pass
     def start_requests(self):
         # yield scrapy.Request("http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4121910092307199&__rnd=1501772409505", cookies=self.cook)
+        self.cook = processcook(self.settings.get("COOKIE"))
         yield scrapy.Request("https://www.weibo.com/",cookies=self.cook,callback=self.loginsina)
     def loginsina(self,response):
         # time.sleep(10)

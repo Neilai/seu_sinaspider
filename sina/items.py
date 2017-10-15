@@ -8,6 +8,13 @@ import re
 import scrapy
 from scrapy.loader import ItemLoader
 from scrapy.loader.processors import MapCompose, TakeFirst, Join
+def processcook(cook):
+    b = cook.split(";")
+    result_dic = {}
+    for each in b:
+        result = each.split("=")
+        result_dic[result[0].strip()] = result[1].strip()
+    return result_dic
 def getlocation_gender_name(value):
     location=re.search(r'(\S+)/(\S+)',value).group(2)
     gender=re.search(r'(\S+)/(\S+)',value).group(1)

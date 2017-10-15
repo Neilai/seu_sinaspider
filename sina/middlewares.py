@@ -64,7 +64,7 @@ class SinaSpiderMiddleware(object):
         # if spider.cnt==150:
         #     time.sleep(10)
         #     spider.cnt=0
-        if spider.name=='sinaspider' or spider.name=='sinaspider5':
+        if spider.name=='sinaspider':
             spider.browser.get(request.url)
             if spider.flag==1:
                 while 1:

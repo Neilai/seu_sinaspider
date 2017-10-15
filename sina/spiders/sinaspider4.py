@@ -2,7 +2,6 @@
 import scrapy
 import re
 from items import SinaItem4,processcook
-
 class Sinaspider4Spider(scrapy.Spider):
     name = 'sinaspider4'
     custom_settings = {
@@ -57,4 +56,4 @@ class Sinaspider4Spider(scrapy.Spider):
     def start_requests(self):
         # yield scrapy.Request("https://weibo.cn/u/2290732425",cookies=self.cook)
         self.cook = processcook(self.settings.get("COOKIE"))
-        yield scrapy.Request("https://weibo.cn/2613164393/fans", cookies=self.cook, callback=self.parse_url,meta={'level':1,'uid':self.uid})
+        yield scrapy.Request(self.settings.get("URL"), cookies=self.cook, callback=self.parse_url,meta={'level':1,'uid':self.uid})

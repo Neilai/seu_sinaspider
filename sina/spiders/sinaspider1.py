@@ -55,8 +55,8 @@ class Sinaspider1Spider(scrapy.Spider):
         # login.click()
         # time.sleep(2)
         # cookie=self.browser.get_cookies()
-        for url in self.start_urls:
-            yield scrapy.Request(url,cookies=self.cook,dont_filter=True,callback=self.getmid)
+
+        yield scrapy.Request(self.settings.get("URL"),cookies=self.cook,dont_filter=True,callback=self.getmid)
     def getmid(self,response):
         #result=re.search(r'mid=(\d+)',response.text,re.DOTALL)
         mid='4137112691076812'

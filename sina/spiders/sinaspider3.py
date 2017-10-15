@@ -57,5 +57,5 @@ class Sinaspider3Spider(scrapy.Spider):
         # login.click()
         # time.sleep(2)
         # cookie=self.browser.get_cookies()[0]
-        for url in self.start_urls:
-            yield scrapy.Request(url, cookies=self.cook, callback=self.parse)
+
+        yield scrapy.Request(self.settings.get("URL"), cookies=self.cook, callback=self.parse)

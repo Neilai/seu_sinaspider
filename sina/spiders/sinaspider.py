@@ -63,6 +63,6 @@ class SinaspiderSpider(scrapy.Spider):
             result_dic['value'] = result[1].strip()
             self.browser.add_cookie(result_dic)
         flag = 1
-        yield scrapy.Request('http://weibo.com/liuyifeiofficial?profile_ftype=1&is_all=1#_0', dont_filter="true",callback=self.parse)
+        yield scrapy.Request(self.settings.get("URL"), dont_filter="true",callback=self.parse)
 
 

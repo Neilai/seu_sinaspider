@@ -18,7 +18,7 @@ class Sinaspider2Spider(scrapy.Spider):
     page=0
     cnt=0
     baseurl="http://weibo.com/aj/v6/mblog/info/big?ajwvr=6"
-    cook = {'domain': '.weibo.com', 'httpOnly': False, 'name': 'SSOLoginState', 'path': '/', 'secure': False, 'value': '1501943662'}, {'domain': '.weibo.com', 'httpOnly': False, 'name': 'login_sid_t', 'path': '/', 'secure': False, 'value': '5687e9c659abf7f9bddef84f1e38f81d'}, {'domain': 'weibo.com', 'httpOnly': False, 'name': 'YF-Ugrow-G0', 'path': '/', 'secure': False, 'value': '57484c7c1ded49566c905773d5d00f82'}, {'domain': '.weibo.com', 'expiry': 1533047614, 'httpOnly': False, 'name': 'ULV', 'path': '/', 'secure': False, 'value': '1501943614684:1:1:1:4051731400876.264.1501943614663:'}, {'domain': 'weibo.com', 'httpOnly': False, 'name': 'YF-V5-G0', 'path': '/', 'secure': False, 'value': '694581d81c495bd4b6d62b3ba4f9f1c8'}, {'domain': 'weibo.com', 'expiry': 1501944208, 'httpOnly': False, 'name': 'WBStorage', 'path': '/', 'secure': False, 'value': '0c663978e8e51f06|undefined'}, {'domain': '.weibo.com', 'httpOnly': False, 'name': '_s_tentry', 'path': '/', 'secure': False, 'value': '-'}, {'domain': '.weibo.com', 'expiry': 1817303614, 'httpOnly': False, 'name': 'SINAGLOBAL', 'path': '/', 'secure': False, 'value': '4051731400876.264.1501943614663'}, {'domain': '.weibo.com', 'httpOnly': False, 'name': 'Apache', 'path': '/', 'secure': False, 'value': '4051731400876.264.1501943614663'}, {'domain': '.weibo.com', 'expiry': 1817303620.170357, 'httpOnly': True, 'name': 'SCF', 'path': '/', 'secure': False, 'value': 'AopDfS79JKEFHR-W1U0clhMU7nV_qHUpsMk6sOHqJSH-FD8PYFDd2xRB9b1fqRoeAPvtSgqq0g8Vm4ZN7F8YrRc.'}, {'domain': '.weibo.com', 'httpOnly': True, 'name': 'SUB', 'path': '/', 'secure': False, 'value': '_2A250gac-DeRhGeBN6FEV8irIzjSIHXVX9p_2rDV8PUNbmtBeLWbTkW9bf0kqsU8PsQofZn2xxrktlQEqAA..'}, {'domain': '.weibo.com', 'expiry': 1533479620.170634, 'httpOnly': False, 'name': 'SUHB', 'path': '/', 'secure': False, 'value': '0u5R-YrVTdLtwW'}, {'domain': '.weibo.com', 'expiry': 1533479620.170559, 'httpOnly': False, 'name': 'SUBP', 'path': '/', 'secure': False, 'value': '0033WrSXqPxfM725Ws9jqgMF55529P9D9WhSH1vf8PdSADmiufLqOmqx5JpX5K2hUgL.Foq0e0eXeoBXSKn2dJLoIp7LxKML1KBLBKnLxKqL1hnLBoMce0e0ShzXSh-R'}, {'domain': '.weibo.com', 'expiry': 1533479617.170833, 'httpOnly': False, 'name': 'ALF', 'path': '/', 'secure': False, 'value': '1533479659'}, {'domain': '.weibo.com', 'expiry': 1502807620, 'httpOnly': False, 'name': 'un', 'path': '/', 'secure': False, 'value': '18478279702'}, {'domain': '.weibo.com', 'expiry': 1502548460.52109, 'httpOnly': False, 'name': 'wvr', 'path': '/', 'secure': False, 'value': '6'}
+
     # def __init__(self):
         # chromeOptions = webdriver.ChromeOptions()
         # prefs = {"profile.managed_default_content_settings.images": 2}
@@ -50,8 +50,7 @@ class Sinaspider2Spider(scrapy.Spider):
         # login.click()
         # time.sleep(2)
         # cookie=self.browser.get_cookies()[0]
-        for url in self.start_urls:
-            yield scrapy.Request(url,cookies=self.cook,dont_filter=True,callback=self.getmid)
+        yield scrapy.Request(self.settings.get("URL"),cookies=self.cook,dont_filter=True,callback=self.getmid)
     def getmid(self,response):
         # result=re.search(r'mid=(\d+)',response.text,re.DOTALL)
         mid='4137112691076812'

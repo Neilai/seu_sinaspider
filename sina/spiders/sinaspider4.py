@@ -9,7 +9,7 @@ class Sinaspider4Spider(scrapy.Spider):
     }
     allowed_domains = ['www.weibo.cn']
     start_urls = ['https://weibo.cn/2613164393/fans']
-    uid=2613164393
+    #uid=2613164393
 
     baseurl="https://weibo.cn/{0}/fans?page={1}"
 
@@ -55,5 +55,7 @@ class Sinaspider4Spider(scrapy.Spider):
         yield sina_item4
     def start_requests(self):
         # yield scrapy.Request("https://weibo.cn/u/2290732425",cookies=self.cook)
-        self.cook = processcook(self.settings.get("COOKIE"))
-        yield scrapy.Request(self.settings.get("URL"), cookies=self.cook, callback=self.parse_url,meta={'level':1,'uid':self.uid})
+        self.cook = processcook(self.settings.get("COOKIE_URL").split('|')[0])
+        self.uid=self.settings.get("COOKIE_URL").split('|')[1]
+        url="https://weibo.cn/"+self.uid+"/fans"
+        yield scrapy.Request(url, cookies=self.cook, callback=self.parse_url,meta={'level':1,'uid':self.uid})

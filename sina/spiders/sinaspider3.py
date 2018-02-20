@@ -10,14 +10,14 @@ class Sinaspider3Spider(scrapy.Spider):
     name = 'sinaspider3'
     # allowed_domains = ['www.weibo.com']
     start_urls = ['https://m.weibo.cn/api/container/getIndex?containerid=231051_-_fans_-_3261134763&since_id=17']
-    baseapi='https://m.weibo.cn/api/container/getIndex?containerid=231051_-_fans_-_3261134763&since_id='
+    # baseapi='https://m.weibo.cn/api/container/getIndex?containerid=231051_-_fans_-_3261134763&since_id='
     baseurl='https://weibo.cn/u/'
-    index=18
+    index=1
     cnt=0
     def parse(self, response):
       dic=json.loads(response.text)
       uid = []
-      if  'cards' in dic['data'].keys():
+      if  'cards' in dic.keys():
         users=dic['cards'][0]['card_group']
         for each in users:
           if 'user' in each.keys():
@@ -34,7 +34,7 @@ class Sinaspider3Spider(scrapy.Spider):
         location_and_username=location_and_username.xpath("string(.)").extract()[0]
         webnum=response.xpath("//div[@class='u']/div[@class='tip2']/span/text()").extract()[0]
         fans=response.xpath("//div[@class='u']/div[@class='tip2']/a[2]/text()").extract()[0]
-        follow=response.xpath("//div[@class='u']/div[@class='tip2']/a[2]/text()").extract()[0]
+        follow=response.xpath("//div[@class='u']/div[@class='tip2']/a[1]/text()").extract()[0]
         sina_item3 =Sina_Item3()
         sina_item3['webnum']=getnum3(webnum)
         sina_item3['follow']=getnum3(follow)
@@ -44,8 +44,9 @@ class Sinaspider3Spider(scrapy.Spider):
         pass
     def start_requests(self):
         # yield scrapy.Request("https://weibo.cn/u/2290732425",cookies=self.cook)
-        self.cook = processcook(self.settings.get("COOKIE"))
-        yield scrapy.Request("https://m.weibo.com/", cookies=self.cook, callback=self.loginsina)
+        self.cook = processcook(self.settings.get("COOKIE_URL").split('|')[0])
+        self.baseapi="https://m.weibo.cn/api/container/getIndex?containerid="+self.settings.get("COOKIE_URL").split('|')[1]+"&type=all"+"&since_id="
+        yield scrapy.Request("https://m.weibo.cn/", cookies=self.cook, callback=self.loginsina)
 
     def loginsina(self, response):
         # time.sleep(10)
@@ -57,5 +58,5 @@ class Sinaspider3Spider(scrapy.Spider):
         # login.click()
         # time.sleep(2)
         # cookie=self.browser.get_cookies()[0]
-
-        yield scrapy.Request(self.settings.get("URL"), cookies=self.cook, callback=self.parse)
+        url=self.baseapi+str(self.index)
+        yield scrapy.Request(url, cookies=self.cook, callback=self.parse)

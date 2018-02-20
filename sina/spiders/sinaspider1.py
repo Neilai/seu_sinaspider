@@ -43,7 +43,7 @@ class Sinaspider1Spider(scrapy.Spider):
 
     def start_requests(self):
         # yield scrapy.Request("http://weibo.com/aj/v6/comment/big?ajwvr=6&filter=all&id=4121910092307199&page=1", cookies=self.cook)
-        self.cook = processcook(self.settings.get("COOKIE"))
+        self.cook = processcook(self.settings.get("COOKIE_URL").split('|')[0])
         yield scrapy.Request("https://www.weibo.com/",cookies=self.cook,callback=self.loginsina)
     def loginsina(self,response):
         # time.sleep(10)
@@ -56,12 +56,12 @@ class Sinaspider1Spider(scrapy.Spider):
         # time.sleep(2)
         # cookie=self.browser.get_cookies()
 
-        yield scrapy.Request(self.settings.get("URL"),cookies=self.cook,dont_filter=True,callback=self.getmid)
+        yield scrapy.Request(self.settings.get("COOKIE_URL").split('|')[1],cookies=self.cook,dont_filter=True,callback=self.getmid)
     def getmid(self,response):
-        #result=re.search(r'mid=(\d+)',response.text,re.DOTALL)
-        mid='4137112691076812'
-        url=self.baseurl+'&'+'id='+mid+'&'+'page=1'
-        yield scrapy.Request(url,cookies=self.cook,dont_filter=True,callback=self.generate_page,meta={'mid':mid})
+        result=re.search(r'mid=(\d+)',response.text,re.DOTALL)
+        #mid='4137112691076812'
+        url=self.baseurl+'&'+'id='+result.group(1)+'&'+'page=1'
+        yield scrapy.Request(url,cookies=self.cook,dont_filter=True,callback=self.generate_page,meta={'mid':result.group(1)})
     def generate_page(self,response):
         dic=json.loads(response.text)
         if 'page' in dic['data'].keys():

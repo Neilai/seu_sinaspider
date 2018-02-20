@@ -18,9 +18,7 @@ class Sinaspider1Spider(scrapy.Spider):
     page=0
     cnt=1
     baseurl="http://weibo.com/aj/v6/comment/big?ajwvr=6"
-    # def __init__(self):
-    #
-    #     pass
+
     def parse(self, response):
         result=json.loads(response.text)['data']['html']
         likenum=Selector(text=result).xpath("//div[@class='list_box']/div[@class='list_ul']/div[@comment_id]/div[@class='list_con']/div[contains(@class,'WB_func')]//span[@node-type='like_status']/em[2]/text()").extract()
@@ -38,30 +36,24 @@ class Sinaspider1Spider(scrapy.Spider):
         sina_item1['likenum']=likenum
         sina_item1['datetime']=datetime
         sina_item1['comment']=comment
-        sina_item1['comment_name']=comment_name
+        sina_item1['commentname']=comment_name
+        sina_item1['cookie']=self.settings.get("COOKIE")
         yield sina_item1
 
     def start_requests(self):
         # yield scrapy.Request("http://weibo.com/aj/v6/comment/big?ajwvr=6&filter=all&id=4121910092307199&page=1", cookies=self.cook)
-        self.cook = processcook(self.settings.get("COOKIE_URL").split('|')[0])
-        yield scrapy.Request("https://www.weibo.com/",cookies=self.cook,callback=self.loginsina)
-    def loginsina(self,response):
-        # time.sleep(10)
-        # username = self.browser.find_element_by_xpath('//*[@id="loginname"]')
-        # password = self.browser.find_element_by_xpath('//*[@id="pl_login_form"]/div/div[3]/div[2]/div/input')
-        # login = self.browser.find_element_by_xpath('''//*[@id="pl_login_form"]/div/div[3]/div[6]/a''')
-        # username.send_keys("1131894367@qq.com")  # 此处填入用户名
-        # password.send_keys("laijingzhi")  # 此处填入密码
-        # login.click()
-        # time.sleep(2)
-        # cookie=self.browser.get_cookies()
+        self.cook = processcook(self.settings.get("COOKIE"))
+        yield scrapy.Request(self.settings.get("URL"),cookies=self.cook,callback=self.getmid)
 
-        yield scrapy.Request(self.settings.get("COOKIE_URL").split('|')[1],cookies=self.cook,dont_filter=True,callback=self.getmid)
+
+
     def getmid(self,response):
         result=re.search(r'mid=(\d+)',response.text,re.DOTALL)
         #mid='4137112691076812'
         url=self.baseurl+'&'+'id='+result.group(1)+'&'+'page=1'
         yield scrapy.Request(url,cookies=self.cook,dont_filter=True,callback=self.generate_page,meta={'mid':result.group(1)})
+
+
     def generate_page(self,response):
         dic=json.loads(response.text)
         if 'page' in dic['data'].keys():

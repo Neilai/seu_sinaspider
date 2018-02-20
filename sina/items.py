@@ -8,6 +8,7 @@ import re
 import scrapy
 from scrapy.loader import ItemLoader
 from scrapy.loader.processors import MapCompose, TakeFirst, Join
+
 def processcook(cook):
     b = cook.split(";")
     result_dic = {}
@@ -15,14 +16,17 @@ def processcook(cook):
         result = each.split("=")
         result_dic[result[0].strip()] = result[1].strip()
     return result_dic
+
 def getlocation_gender_name(value):
     location=re.search(r'(\S+)/(\S+)',value).group(2)
     gender=re.search(r'(\S+)/(\S+)',value).group(1)
     name=re.search(r'(\S+)',value).group(1)
     return location,gender,name
+
 def getnum3(value):
     result= re.search('(\d+)',value)
     return result.group(1)
+
 def matchnum(item):
     length = len(item)
     for index in range(length):
@@ -39,15 +43,18 @@ def deletespace(item):
         if item[index] and item[index]!='：':
             remain_element.append(item[index])
     return remain_element
+
 def stripspace(item):
     length=len(item)
     for index in range(length):
         item[index]=item[index].strip()
+
 def getnum(item):
     length=len(item)
     for index in range(length):
         if not  item[index].strip().isdigit():
             item[index]='0'
+
 def JudgeNum(item):
     # length=len(item)
     # for index in range(length):
@@ -72,12 +79,13 @@ class SinaItem2(scrapy.Item):
     repeatnum=scrapy.Field()
     datetime=scrapy.Field()
     repeatname=scrapy.Field()
+
 class SinaItem1(scrapy.Item):
     likenum=scrapy.Field()
     datetime=scrapy.Field()
-    comment_name=scrapy.Field()
+    commentname=scrapy.Field()
     comment=scrapy.Field()
-
+    cookie = scrapy.Field()
 
 class SinaItem(scrapy.Item):
     # define the fields for your item here like:
@@ -86,6 +94,7 @@ class SinaItem(scrapy.Item):
     commentnum=scrapy.Field(input_processor=MapCompose(JudgeNum))
     repeatnum=scrapy.Field(input_processor=MapCompose(JudgeNum))
     datetime= scrapy.Field()
+    cookie = scrapy.Field()
     pass
 
 class SinaItemloader(ItemLoader):

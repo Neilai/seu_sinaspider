@@ -1,0 +1,18 @@
+2017-10-20 23:58:03 [scrapy.utils.log] INFO: Scrapy 1.4.0 started (bot: sina)
+2017-10-20 23:58:03 [scrapy.utils.log] INFO: Overridden settings: {'BOT_NAME': 'sina', 'DOWNLOAD_DELAY': 1.1, 'LOG_FILE': 'logs\\sina\\sinaspider\\6cd42f14b5af11e7ab14f0761c96c9b9.log', 'NEWSPIDER_MODULE': 'sina.spiders', 'SPIDER_MODULES': ['sina.spiders']}
+2017-10-20 23:58:03 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2017-10-20 23:58:03 [twisted] CRITICAL: Unhandled error in Deferred:
+2017-10-20 23:58:03 [twisted] CRITICAL: 
+Traceback (most recent call last):
+  File "c:\users\notebook\appdata\local\programs\python\python36-32\lib\site-packages\twisted\internet\defer.py", line 1386, in _inlineCallbacks
+    result = g.send(result)
+  File "c:\users\notebook\appdata\local\programs\python\python36-32\lib\site-packages\scrapy\crawler.py", line 76, in crawl
+    self.spider = self._create_spider(*args, **kwargs)
+  File "c:\users\notebook\appdata\local\programs\python\python36-32\lib\site-packages\scrapy\crawler.py", line 99, in _create_spider
+    return self.spidercls.from_crawler(self, *args, **kwargs)
+  File "c:\users\notebook\appdata\local\programs\python\python36-32\lib\site-packages\scrapy\spiders\__init__.py", line 51, in from_crawler
+    spider = cls(*args, **kwargs)
+TypeError: __init__() got an unexpected keyword argument '_job'

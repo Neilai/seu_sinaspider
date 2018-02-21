@@ -75,10 +75,13 @@ class Sina_Item3(scrapy.Item):
     location=scrapy.Field()
     gender=scrapy.Field()
     username=scrapy.Field()
+    cookie = scrapy.Field()
+
 class SinaItem2(scrapy.Item):
     repeatnum=scrapy.Field()
     datetime=scrapy.Field()
     repeatname=scrapy.Field()
+    cookie = scrapy.Field()
 
 class SinaItem1(scrapy.Item):
     likenum=scrapy.Field()

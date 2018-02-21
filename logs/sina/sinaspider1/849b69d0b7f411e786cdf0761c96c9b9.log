@@ -1,0 +1,320 @@
+2017-10-23 21:17:47 [scrapy.utils.log] INFO: Scrapy 1.4.0 started (bot: sina)
+2017-10-23 21:17:47 [scrapy.utils.log] INFO: Overridden settings: {'BOT_NAME': 'sina', 'DOWNLOAD_DELAY': 1.1, 'LOG_FILE': 'logs\\sina\\sinaspider1\\849b69d0b7f411e786cdf0761c96c9b9.log', 'NEWSPIDER_MODULE': 'sina.spiders', 'SPIDER_MODULES': ['sina.spiders']}
+2017-10-23 21:17:48 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2017-10-23 21:17:49 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['sina.middlewares.RandomUserAgentMiddlware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'sina.middlewares.SinaSpiderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2017-10-23 21:17:49 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2017-10-23 21:17:49 [scrapy.middleware] INFO: Enabled item pipelines:
+['sina.pipelines.SinaPipeline1']
+2017-10-23 21:17:49 [scrapy.core.engine] INFO: Spider opened
+2017-10-23 21:17:49 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2017-10-23 21:17:49 [sinaspider1] INFO: Spider opened: sinaspider1
+2017-10-23 21:17:49 [scrapy.extensions.telnet] DEBUG: Telnet console listening on 127.0.0.1:6023
+2017-10-23 21:17:50 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (302) to <GET https://www.weibo.com/u/2613164393/home?wvr=5> from <GET https://www.weibo.com/>
+2017-10-23 21:17:52 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://www.weibo.com/u/2613164393/home?wvr=5> (referer: None)
+2017-10-23 21:17:54 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://weibo.com/1882811994/FriVU08Qz?from=page_1005051882811994_profile&wvr=6&mod=weibotime&type=comment#_rnd1508764632684> (referer: None)
+2017-10-23 21:17:55 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://weibo.com/aj/v6/comment/big?ajwvr=6&id=4165076380034011&page=1> (referer: http://weibo.com/1882811994/FriVU08Qz?from=page_1005051882811994_profile&wvr=6&mod=weibotime&type=comment)
+2017-10-23 21:17:56 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://weibo.com/aj/v6/comment/big?ajwvr=6&id=4165076380034011&page=11> (referer: http://weibo.com/aj/v6/comment/big?ajwvr=6&id=4165076380034011&page=1)
+2017-10-23 21:17:56 [scrapy.core.scraper] DEBUG: Scraped from <200 http://weibo.com/aj/v6/comment/big?ajwvr=6&id=4165076380034011&page=11>
+None
+2017-10-23 21:17:57 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://weibo.com/aj/v6/comment/big?ajwvr=6&id=4165076380034011&page=10> (referer: http://weibo.com/aj/v6/comment/big?ajwvr=6&id=4165076380034011&page=1)
+2017-10-23 21:17:58 [scrapy.core.scraper] DEBUG: Scraped from <200 http://weibo.com/aj/v6/comment/big?ajwvr=6&id=4165076380034011&page=10>
+None
+2017-10-23 21:17:58 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://weibo.com/aj/v6/comment/big?ajwvr=6&id=4165076380034011&page=9> (referer: http://weibo.com/aj/v6/comment/big?ajwvr=6&id=4165076380034011&page=1)
+2017-10-23 21:17:59 [scrapy.core.scraper] ERROR: Error processing {'comment': ['KitaShi4：哇！好喜欢！',
+             'Rolling___：女神',
+             '_肥媛：@Mccopp',
+             'io烦烦烦烦烦烦烦：真美啊穿成这样打乒乓都还是美',
+             'dear_zhui：美呆了',
+             '小鳄鱼的哥斯拉：图三尾戒！单身！我还有机会！',
+             '节操兜售：gakki 人间宝物',
+             '谭松韵的圈外男友：这是夜生活',
+             '喵陛下_：我老婆太美了',
+             '敲可爱_林同学：啊',
+             'earlybath：对不起，会员真的可以为所欲为 ¡评论配图',
+             '敲可爱_林同学：图三简直暴击',
+             '你可真是棒棒哒w：嗷！！忍住想留鼻血的冲动',
+             '蓝莓奶茶冻咖啡：',
+             '陰霾又光明：@pkpk-qiu @时间索吻vi',
+             'EncoreF：一个年龄段一个味道，唯独不变的就是永远那么可爱[嘿哈]',
+             '陈敏敏在这里：贼好看了',
+             'Muse时光流逝：😻',
+             '伊藤艮比：@Orangecider\xa0\xa0_(´ཀ`」 ∠)__',
+             '更名狂魔：@睡不到仙儿的人生是不完美的'],
+ 'comment_name': ['KitaShi4',
+                  'Rolling___',
+                  '_肥媛',
+                  'io烦烦烦烦烦烦烦',
+                  'dear_zhui',
+                  '小鳄鱼的哥斯拉',
+                  '节操兜售',
+                  '谭松韵的圈外男友',
+                  '喵陛下_',
+                  '敲可爱_林同学',
+                  'earlybath',
+                  '敲可爱_林同学',
+                  '你可真是棒棒哒w',
+                  '蓝莓奶茶冻咖啡',
+                  '陰霾又光明',
+                  'EncoreF',
+                  '陈敏敏在这里',
+                  'Muse时光流逝',
+                  '伊藤艮比',
+                  '更名狂魔'],
+ 'datetime': ['10月21日 00:08 ',
+              '10月21日 00:06 ',
+              '10月21日 00:06 ',
+              '10月21日 00:06 ',
+              '10月21日 00:06 ',
+              '10月21日 00:06 ',
+              '10月21日 00:06 ',
+              '10月21日 00:05 ',
+              '10月21日 00:05 ',
+              '10月21日 00:05 ',
+              '10月21日 00:05 ',
+              '10月21日 00:04 ',
+              '10月21日 00:04 ',
+              '10月21日 00:04 ',
+              '10月21日 00:04 ',
+              '10月21日 00:04 ',
+              '10月21日 00:03 ',
+              '10月21日 00:03 ',
+              '10月21日 00:02 ',
+              '10月21日 00:02 '],
+ 'likenum': ['0',
+             '0',
+             '0',
+             '2',
+             '0',
+             '3',
+             '1',
+             '0',
+             '4',
+             '0',
+             '0',
+             '3',
+             '2',
+             '4',
+             '0',
+             '1',
+             '0',
+             '0',
+             '0',
+             '0']}
+Traceback (most recent call last):
+  File "c:\users\notebook\appdata\local\programs\python\python36-32\lib\site-packages\twisted\internet\defer.py", line 653, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "C:\Users\Notebook\Desktop\seu_sinaspider\sina\pipelines.py", line 38, in process_item
+    (item["comment_name"][index], item["likenum"][index], item["comment"][index],item["datetime"][index]))
+  File "c:\users\notebook\appdata\local\programs\python\python36-32\lib\site-packages\MySQLdb\cursors.py", line 250, in execute
+    self.errorhandler(self, exc, value)
+  File "c:\users\notebook\appdata\local\programs\python\python36-32\lib\site-packages\MySQLdb\connections.py", line 50, in defaulterrorhandler
+    raise errorvalue
+  File "c:\users\notebook\appdata\local\programs\python\python36-32\lib\site-packages\MySQLdb\cursors.py", line 247, in execute
+    res = self._query(query)
+  File "c:\users\notebook\appdata\local\programs\python\python36-32\lib\site-packages\MySQLdb\cursors.py", line 411, in _query
+    rowcount = self._do_query(q)
+  File "c:\users\notebook\appdata\local\programs\python\python36-32\lib\site-packages\MySQLdb\cursors.py", line 374, in _do_query
+    db.query(q)
+  File "c:\users\notebook\appdata\local\programs\python\python36-32\lib\site-packages\MySQLdb\connections.py", line 292, in query
+    _mysql.connection.query(self, query)
+_mysql_exceptions.OperationalError: (1366, "Incorrect string value: '\\xF0\\x9F\\x98\\xBB' for column 'comment' at row 1")
+2017-10-23 21:18:00 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://weibo.com/aj/v6/comment/big?ajwvr=6&id=4165076380034011&page=8> (referer: http://weibo.com/aj/v6/comment/big?ajwvr=6&id=4165076380034011&page=1)
+2017-10-23 21:18:00 [scrapy.core.scraper] DEBUG: Scraped from <200 http://weibo.com/aj/v6/comment/big?ajwvr=6&id=4165076380034011&page=8>
+None
+2017-10-23 21:18:02 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://weibo.com/aj/v6/comment/big?ajwvr=6&id=4165076380034011&page=7> (referer: http://weibo.com/aj/v6/comment/big?ajwvr=6&id=4165076380034011&page=1)
+2017-10-23 21:18:02 [scrapy.core.scraper] DEBUG: Scraped from <200 http://weibo.com/aj/v6/comment/big?ajwvr=6&id=4165076380034011&page=7>
+None
+2017-10-23 21:18:03 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://weibo.com/aj/v6/comment/big?ajwvr=6&id=4165076380034011&page=6> (referer: http://weibo.com/aj/v6/comment/big?ajwvr=6&id=4165076380034011&page=1)
+2017-10-23 21:18:03 [scrapy.core.scraper] DEBUG: Scraped from <200 http://weibo.com/aj/v6/comment/big?ajwvr=6&id=4165076380034011&page=6>
+None
+2017-10-23 21:18:05 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://weibo.com/aj/v6/comment/big?ajwvr=6&id=4165076380034011&page=5> (referer: http://weibo.com/aj/v6/comment/big?ajwvr=6&id=4165076380034011&page=1)
+2017-10-23 21:18:05 [scrapy.core.scraper] DEBUG: Scraped from <200 http://weibo.com/aj/v6/comment/big?ajwvr=6&id=4165076380034011&page=5>
+None
+2017-10-23 21:18:07 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://weibo.com/aj/v6/comment/big?ajwvr=6&id=4165076380034011&page=3> (referer: http://weibo.com/aj/v6/comment/big?ajwvr=6&id=4165076380034011&page=1)
+2017-10-23 21:18:07 [scrapy.core.scraper] DEBUG: Scraped from <200 http://weibo.com/aj/v6/comment/big?ajwvr=6&id=4165076380034011&page=3>
+None
+2017-10-23 21:18:07 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://weibo.com/aj/v6/comment/big?ajwvr=6&id=4165076380034011&page=4> (referer: http://weibo.com/aj/v6/comment/big?ajwvr=6&id=4165076380034011&page=1)
+2017-10-23 21:18:07 [scrapy.core.scraper] DEBUG: Scraped from <200 http://weibo.com/aj/v6/comment/big?ajwvr=6&id=4165076380034011&page=4>
+None
+2017-10-23 21:18:07 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://weibo.com/aj/v6/comment/big?ajwvr=6&id=4165076380034011&page=2> (referer: http://weibo.com/aj/v6/comment/big?ajwvr=6&id=4165076380034011&page=1)
+2017-10-23 21:18:08 [scrapy.core.scraper] DEBUG: Scraped from <200 http://weibo.com/aj/v6/comment/big?ajwvr=6&id=4165076380034011&page=2>
+None
+2017-10-23 21:18:09 [scrapy.core.engine] DEBUG: Crawled (200) <GET http://weibo.com/aj/v6/comment/big?ajwvr=6&id=4165076380034011&page=1> (referer: http://weibo.com/aj/v6/comment/big?ajwvr=6&id=4165076380034011&page=1)
+2017-10-23 21:18:10 [scrapy.core.scraper] ERROR: Error processing {'comment': ['蓝莓奶茶冻咖啡：',
+             '-张Star：图片评论 ¡评论配图',
+             'EMITDOOG：大人が再び、渋谷ヘ 长大后，重新回到涉谷',
+             '敲可爱_林同学：图三简直暴击',
+             '陈乜铭：图片评论 ¡评论配图',
+             'WhiplashGakki：真的是美的不像这人间的人',
+             '你可真是棒棒哒w：嗷！！忍住想留鼻血的冲动',
+             'fallenloser0：表白轻熟嘎！',
+             '西柚monkey：看出了一丝色…色气好白gakki! ¡评论配图',
+             'Yifua-：图片评论 ¡评论配图',
+             '丢了一年的微博找回来了哈哈哈：@eynl_',
+             '梨酒池清丶：回复@陈乜铭:求原图！',
+             '敬元元：醉了醉了我醉了',
+             '寥寥撒下来：回复@陈乜铭:求原图',
+             'Yakurr_Gakki：回复@夔豆:求原图。膜拜大佬！',
+             '毓秀家的烂尾猫：回复@夔豆:求个原图👬',
+             '倚马一程：回复@陈乜铭:求原图',
+             'Gooner章鱼：回复@夔豆:求原图',
+             '仁切措：#新垣结衣# 如此气质美女送上我的',
+             '青果雍：看着舒服',
+             'Party_Monster：我的天啊，太美了！',
+             'T_itan：求图六原图！',
+             '起个好名字让人更容易记住你：回复@夔豆:求原图！！！',
+             '佐野柒月：可萌可女人 怎么能这么完美',
+             '垣緣圓來如此：回复@-张Star:買買買',
+             '北邱一剑：@小神cp3 天啊，厘子！太好看啦！',
+             '陈乜铭：回复@nAnother:木有没水映的呀',
+             '博林布洛克子爵：回复@夔豆:求无水印',
+             '二师妹y：图二美的不行了…'],
+ 'comment_name': ['蓝莓奶茶冻咖啡',
+                  '-张Star',
+                  'EMITDOOG',
+                  '敲可爱_林同学',
+                  '陈乜铭',
+                  'WhiplashGakki',
+                  '你可真是棒棒哒w',
+                  'fallenloser0',
+                  '西柚monkey',
+                  'Yifua-',
+                  '丢了一年的微博找回来了哈哈哈',
+                  '梨酒池清丶',
+                  '敬元元',
+                  '寥寥撒下来',
+                  'Yakurr_Gakki',
+                  '毓秀家的烂尾猫',
+                  '倚马一程',
+                  'Gooner章鱼',
+                  '仁切措',
+                  '青果雍',
+                  'Party_Monster',
+                  'T_itan',
+                  '起个好名字让人更容易记住你',
+                  '佐野柒月',
+                  '垣緣圓來如此',
+                  '北邱一剑',
+                  '陈乜铭',
+                  '博林布洛克子爵',
+                  '二师妹y'],
+ 'datetime': ['10月21日 00:04 ',
+              '10月21日 18:39 ',
+              '10月21日 00:13 ',
+              '10月21日 00:04 ',
+              '10月21日 00:37 ',
+              '10月21日 00:02 ',
+              '10月21日 00:04 ',
+              '10月20日 23:58 ',
+              '10月21日 00:41 ',
+              '10月21日 00:01 ',
+              '22分钟前 ',
+              '今天 18:59 ',
+              '今天 18:59 ',
+              '今天 16:29 ',
+              '今天 16:09 ',
+              '今天 10:21 ',
+              '今天 00:32 ',
+              '今天 00:14 ',
+              '今天 00:13 ',
+              '今天 00:03 ',
+              '10月22日 22:00 ',
+              '10月22日 21:47 ',
+              '10月22日 15:19 ',
+              '10月22日 12:30 ',
+              '10月22日 10:20 ',
+              '10月21日 23:44 ',
+              '10月21日 23:04 ',
+              '10月21日 22:03 ',
+              '10月21日 21:47 '],
+ 'likenum': ['4',
+             '3',
+             '1',
+             '3',
+             '2',
+             '1',
+             '2',
+             '3',
+             '16',
+             '3',
+             '0',
+             '0',
+             '0',
+             '0',
+             '0',
+             '0',
+             '0',
+             '0',
+             '0',
+             '0',
+             '0',
+             '0',
+             '0',
+             '0',
+             '0',
+             '0',
+             '0',
+             '0',
+             '0']}
+Traceback (most recent call last):
+  File "c:\users\notebook\appdata\local\programs\python\python36-32\lib\site-packages\twisted\internet\defer.py", line 653, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "C:\Users\Notebook\Desktop\seu_sinaspider\sina\pipelines.py", line 38, in process_item
+    (item["comment_name"][index], item["likenum"][index], item["comment"][index],item["datetime"][index]))
+  File "c:\users\notebook\appdata\local\programs\python\python36-32\lib\site-packages\MySQLdb\cursors.py", line 250, in execute
+    self.errorhandler(self, exc, value)
+  File "c:\users\notebook\appdata\local\programs\python\python36-32\lib\site-packages\MySQLdb\connections.py", line 50, in defaulterrorhandler
+    raise errorvalue
+  File "c:\users\notebook\appdata\local\programs\python\python36-32\lib\site-packages\MySQLdb\cursors.py", line 247, in execute
+    res = self._query(query)
+  File "c:\users\notebook\appdata\local\programs\python\python36-32\lib\site-packages\MySQLdb\cursors.py", line 411, in _query
+    rowcount = self._do_query(q)
+  File "c:\users\notebook\appdata\local\programs\python\python36-32\lib\site-packages\MySQLdb\cursors.py", line 374, in _do_query
+    db.query(q)
+  File "c:\users\notebook\appdata\local\programs\python\python36-32\lib\site-packages\MySQLdb\connections.py", line 292, in query
+    _mysql.connection.query(self, query)
+_mysql_exceptions.OperationalError: (1366, "Incorrect string value: '\\xF0\\x9F\\x91\\xAC' for column 'comment' at row 1")
+2017-10-23 21:18:10 [scrapy.core.engine] INFO: Closing spider (finished)
+2017-10-23 21:18:10 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 19651,
+ 'downloader/request_count': 15,
+ 'downloader/request_method_count/GET': 15,
+ 'downloader/response_bytes': 141332,
+ 'downloader/response_count': 15,
+ 'downloader/response_status_count/200': 14,
+ 'downloader/response_status_count/302': 1,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2017, 10, 23, 13, 18, 10, 193142),
+ 'item_scraped_count': 9,
+ 'log_count/DEBUG': 25,
+ 'log_count/ERROR': 2,
+ 'log_count/INFO': 8,
+ 'request_depth_max': 3,
+ 'response_received_count': 14,
+ 'scheduler/dequeued': 15,
+ 'scheduler/dequeued/memory': 15,
+ 'scheduler/enqueued': 15,
+ 'scheduler/enqueued/memory': 15,
+ 'start_time': datetime.datetime(2017, 10, 23, 13, 17, 49, 717090)}
+2017-10-23 21:18:10 [scrapy.core.engine] INFO: Spider closed (finished)

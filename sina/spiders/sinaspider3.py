@@ -3,7 +3,7 @@
 import scrapy
 import json
 import re
-from items import  getnum3,getlocation_gender_name,Sina_Item3,processcook
+from items import  getnum3,getlocation_gender_name,Sina_Item3,processcook,processdatetime
 
 class Sinaspider3Spider(scrapy.Spider):
     custom_settings = {

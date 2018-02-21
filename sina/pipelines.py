@@ -8,7 +8,7 @@
 import MySQLdb
 import MySQLdb.cursors
 import redis
-
+from items import processdatetime
 class SinaPipeline(object):
     def __init__(self):
 
@@ -23,12 +23,12 @@ class SinaPipeline(object):
         #        """
         cnt=len(item['likenum'])
         for index in range(cnt):
-            # self.cursor.execute(insert_sql, (item["likenum"][index],item["commentnum"][index], item["repeatnum"][index],item["datetime"][index]))
+            # self.cursor.execute(insert_sql, (item["likenum"][index],item["commentnum"][index], item["repeatnum"][index],processdatetime(item["datetime"][index])))
             # self.conn.commit()
 
             self.myredis.rpush(item["cookie"][0]+"likenum",item["likenum"][index])
             self.myredis.rpush(item["cookie"][0]+"commentnum",item["commentnum"][index])
-            self.myredis.rpush(item["cookie"][0]+"datetime",item["datetime"][index])
+            self.myredis.rpush(item["cookie"][0]+"datetime",processdatetime(item["datetime"][index]))
             self.myredis.rpush(item["cookie"][0]+ "comment", item["comment"][index])
 
 class SinaPipeline1(object):

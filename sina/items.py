@@ -8,6 +8,62 @@ import re
 import scrapy
 from scrapy.loader import ItemLoader
 from scrapy.loader.processors import MapCompose, TakeFirst, Join
+import time,datetime
+def processdatetime(x):
+    today=datetime.date.today()
+    year=today.year
+    x=x.lstrip()
+    x=x.rstrip()
+    result = re.search(r"(\d+)秒前", x)
+    if result:
+        period = (datetime.datetime.now() - datetime.timedelta(seconds=int(result[1])))
+        # 转换为时间戳:
+        timeStamp = int(time.mktime(period.timetuple()))
+        return timeStamp
+
+    result=re.search(r"(\d+)分钟前",x)
+    if result:
+        period= (datetime.datetime.now() - datetime.timedelta(minutes=int(result[1])))
+        #转换为时间戳:
+        timeStamp = int(time.mktime(period.timetuple()))
+        return timeStamp
+
+    result=re.search(r"(\d+)小时前",x)
+    if result:
+        period= (datetime.datetime.now() - datetime.timedelta(hours=int(result[1])))
+        #转换为时间戳:
+        timeStamp = int(time.mktime(period.timetuple()))
+        return timeStamp
+
+    result=re.search(r"今天(.*)",x)
+    if result:
+        x=str(today)+result[1]
+        timeStruct = time.strptime(str(x), "%Y-%m-%d %H:%M")
+        timeStamp = int(time.mktime(timeStruct))
+        return timeStamp
+
+    result=re.search(r"昨天(.*)",x)
+    if result:
+        x=str(today)+result[1]
+        timeStruct = time.strptime(str(x), "%Y-%m-%d %H:%M")
+        timeStamp = int(time.mktime(timeStruct))-24*60*60*1000
+        return timeStamp
+
+
+    result=re.search(r"(\d+)月(\d+)日 (\d+):(\d+)",x)
+    if result:
+        x=str(year)+"年"+x
+        timeStruct = time.strptime(x, "%Y年%m月%d日 %H:%M")
+        timeStamp = int(time.mktime(timeStruct))
+        return timeStamp
+
+    result=re.search(r"(\d+)-(\d+)-(\d+) (\d+):(\d+)",x)
+    if result:
+        timeStruct = time.strptime(x,"%Y-%m-%d %H:%M")
+        #转换为时间戳:
+        timeStamp = int(time.mktime(timeStruct))
+        return timeStamp
+
 
 def processcook(cook):
     b = cook.split(";")

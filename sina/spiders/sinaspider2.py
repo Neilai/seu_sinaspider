@@ -3,7 +3,7 @@ import scrapy
 import time
 from selenium import webdriver
 from scrapy.selector import Selector
-from items import SinaItem2,getnum,stripspace,deletespace,matchnum,processcook
+from items import SinaItem2,getnum,stripspace,deletespace,matchnum,processcook,processdatetime
 import json
 import re
 
@@ -27,7 +27,7 @@ class Sinaspider2Spider(scrapy.Spider):
         matchnum(repeatnum)
         sina_item2 = SinaItem2()
         sina_item2['repeatnum']=repeatnum
-        sina_item2['datetime']=datetime
+        sina_item2['datetime']=processdatetime(datetime)
         sina_item2['repeatname']=repeatname
         sina_item2['cookie'] = self.settings.get("COOKIE")
         yield sina_item2

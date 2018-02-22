@@ -77,6 +77,7 @@ def processcook(cook):
     b = cook.split(";")
     result_dic = {}
     for each in b:
+        each=each.strip()
         result = each.split("=")
         result_dic[result[0].strip()] = result[1].strip()
     return result_dic

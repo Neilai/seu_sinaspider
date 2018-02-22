@@ -19,6 +19,12 @@ class Sinaspider2Spider(scrapy.Spider):
     cnt=0
     baseurl="http://weibo.com/aj/v6/mblog/info/big?ajwvr=6"
 
+    def __init__(self, cookie, url, **kwargs):
+        print(cookie)
+        self.starturl = url
+        self.oldcook = cookie
+        self.cook = processcook(cookie)
+
     def parse(self, response):
         result=json.loads(response.text)['data']['html']
         datetime=Selector(text=result).xpath("//div[contains(@class,'list_li') and contains(@class,'S_line1') and contains(@class,'clearfix')]/div[@class='list_con']//div[contains(@class,'WB_from') and contains(@class,'S_txt2')]/a[1]/text()").extract()
@@ -29,13 +35,12 @@ class Sinaspider2Spider(scrapy.Spider):
         sina_item2['repeatnum']=repeatnum
         sina_item2['datetime']=datetime
         sina_item2['repeatname']=repeatname
-        sina_item2['cookie'] = self.settings.get("COOKIE")
+        sina_item2['cookie'] = self.oldcook
         yield sina_item2
 
     def start_requests(self):
         # yield scrapy.Request("http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4121910092307199&__rnd=1501772409505", cookies=self.cook)
-        self.cook = processcook(self.settings.get("COOKIE"))
-        yield scrapy.Request(self.settings.get("URL"),cookies=self.cook,callback=self.getmid)
+        yield scrapy.Request(self.starturl,cookies=self.cook,callback=self.getmid)
 
     def getmid(self,response):
         result=re.search(r'mid=(\d+)',response.text,re.DOTALL)

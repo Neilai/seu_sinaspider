@@ -16,6 +16,11 @@ class Sinaspider3Spider(scrapy.Spider):
     baseurl='https://weibo.cn/u/'
     index=1
     cnt=0
+    def __init__(self,cookie,url,**kwargs):
+        print(cookie)
+        self.starturl=url
+        self.oldcook=cookie
+        self.cook=processcook(cookie)
     def parse(self, response):
       dic=json.loads(response.text)
       uid = []
@@ -43,12 +48,12 @@ class Sinaspider3Spider(scrapy.Spider):
         sina_item3['follow']=getnum3(follow)
         sina_item3['fans']=getnum3(fans)
         sina_item3['location'],sina_item3['gender'],sina_item3['username']=getlocation_gender_name(location_and_username)
-        sina_item3["cookie"]=self.settings.get("COOKIE")
+        sina_item3["cookie"]=self.oldcook
         yield sina_item3
 
     def start_requests(self):
         # yield scrapy.Request("https://weibo.cn/u/2290732425",cookies=self.cook)
-        self.cook = processcook(self.settings.get("COOKIE"))
-        self.baseapi="https://m.weibo.cn/api/container/getIndex?containerid=231051_-_fans_-_"+self.settings.get("URL")+"&type=all"+"&since_id="
+
+        self.baseapi="https://m.weibo.cn/api/container/getIndex?containerid=231051_-_fans_-_"+self.starturl+"&type=all"+"&since_id="
         url = self.baseapi + str(self.index)
         yield scrapy.Request(url, cookies=self.cook,callback=self.parse)

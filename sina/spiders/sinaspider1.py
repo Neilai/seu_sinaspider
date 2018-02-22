@@ -19,6 +19,12 @@ class Sinaspider1Spider(scrapy.Spider):
     cnt=1
     baseurl="http://weibo.com/aj/v6/comment/big?ajwvr=6"
 
+    def __init__(self, cookie, url, **kwargs):
+        print(cookie)
+        self.starturl = url
+        self.oldcook = cookie
+        self.cook = processcook(cookie)
+
     def parse(self, response):
         result=json.loads(response.text)['data']['html']
         likenum=Selector(text=result).xpath("//div[@class='list_box']/div[@class='list_ul']/div[@comment_id]/div[@class='list_con']/div[contains(@class,'WB_func')]//span[@node-type='like_status']/em[2]/text()").extract()
@@ -28,7 +34,12 @@ class Sinaspider1Spider(scrapy.Spider):
         comment=[]
         for each in comment_html:
             tmp=each.xpath('string(.)').extract()[0]
-            comment.append(tmp)
+            tmp=re.search(r"(.*)：(.*)",tmp)
+            if(tmp):
+                result=tmp[2]
+            else:
+                result=tmp
+            comment.append(result)
         getnum(likenum)
         stripspace(comment)
         stripspace(comment_name)
@@ -37,13 +48,12 @@ class Sinaspider1Spider(scrapy.Spider):
         sina_item1['datetime']=datetime
         sina_item1['comment']=comment
         sina_item1['commentname']=comment_name
-        sina_item1['cookie']=self.settings.get("COOKIE")
+        sina_item1['cookie']=self.oldcook
         yield sina_item1
 
     def start_requests(self):
         # yield scrapy.Request("http://weibo.com/aj/v6/comment/big?ajwvr=6&filter=all&id=4121910092307199&page=1", cookies=self.cook)
-        self.cook = processcook(self.settings.get("COOKIE"))
-        yield scrapy.Request(self.settings.get("URL"),cookies=self.cook,callback=self.getmid)
+        yield scrapy.Request(self.starturl,cookies=self.cook,callback=self.getmid)
 
 
 

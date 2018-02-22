@@ -14,12 +14,16 @@ class SinaspiderSpider(scrapy.Spider):
     allowed_domains = ['www.weibo.com']
     # start_urls = ['http://weibo.com/liuyifeiofficial?profile_ftype=1&is_all=1#_0']
     # headers = { 'User-Agent': "Mozilla/5.0 (Windows NT 6.1; WOW64; rv:51.0) Gecko/20100101 Firefox/51.0" }
-    # def __init__(self):
+    def __init__(self,cookie,url,**kwargs):
         # chromeOptions = webdriver.ChromeOptions()
         # prefs = {"profile.managed_default_content_settings.images": 2}
         # chromeOptions.add_experimental_option("prefs", prefs)
         # self.browser = webdriver.Chrome(executable_path="D:/chromedriver.exe",chrome_options=chromeOptions)
         #     # self.browser.add_cookie(cook)
+        print(cookie)
+        self.starturl=url
+        self.oldcook = cookie
+        self.cook=processcook(cookie)
     def parse(self, response):
         # Sina_Item = SinaItem()
         # # likenum=response.xpath("//div[@tbinfo]//div[@class='WB_feed_handle']//em[contains(@class, 'W_ficon') and contains(@class, 'ficon_praised')]/following-sibling::em").extract()
@@ -54,7 +58,7 @@ class SinaspiderSpider(scrapy.Spider):
             sina_item["repeatnum"]=re.search(r"转发\[(\d+)\]",all[i])[1]
             sina_item["commentnum"]=re.search(r"评论\[(\d+)\]",all[i])[1]
             sina_item["datetime"] =result=re.search(r"(.*)\xa0来自",alltime[i])[1]
-            sina_item["cookie"] = result = self.settings.get("COOKIE")
+            sina_item["cookie"] = result = self.oldcook
             yield sina_item
 
 
@@ -65,7 +69,11 @@ class SinaspiderSpider(scrapy.Spider):
         # self.browser = webdriver.Chrome(executable_path="D:/chromedriver.exe", chrome_options=chromeOptions)
         # # self.browser = webdriver.PhantomJS(executable_path="D:/seu_sinaspider/phantomjs/bin/phantomjs.exe")
         # yield scrapy.Request('https://www.weibo.com/',callback=self.loginsina)
-        self.cook = processcook(self.settings.get("COOKIE"))
+        # print(self.settings.get("COOKIE"))
+        # self.cook = processcook(self.settings.get("COOKIE"))
+
+        print(self.cook)
+        print(self.starturl)
         yield scrapy.Request("https://weibo.cn/"+self.settings.get("URL"),cookies=self.cook,callback=self.generate_page)
 
     def generate_page(self,response):
@@ -73,7 +81,7 @@ class SinaspiderSpider(scrapy.Spider):
         result=re.search("(\d+)/(\d+)",total)
         total=int(result[2])
         for i in range(total):
-            url="https://weibo.cn/" + self.settings.get("URL")+"?page="+str(i+1)
+            url="https://weibo.cn/" + self.starturl+"?page="+str(i+1)
             print(url)
             yield scrapy.Request(url, dont_filter=True,cookies=self.cook,callback=self.parse)
 

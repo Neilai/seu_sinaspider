@@ -34,7 +34,7 @@ class Sinaspider1Spider(scrapy.Spider):
         stripspace(comment_name)
         sina_item1=SinaItem1()
         sina_item1['likenum']=likenum
-        sina_item1['datetime']=processdatetime(datetime)
+        sina_item1['datetime']=datetime
         sina_item1['comment']=comment
         sina_item1['commentname']=comment_name
         sina_item1['cookie']=self.settings.get("COOKIE")

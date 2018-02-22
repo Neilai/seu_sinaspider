@@ -14,6 +14,14 @@ def processdatetime(x):
     year=today.year
     x=x.lstrip()
     x=x.rstrip()
+
+    result = re.search(r"(\d+)-(\d+)-(\d+) (\d+):(\d+):(\d+)", x)
+    if result:
+        timeStruct = time.strptime(x, "%Y-%m-%d %H:%M:%S")
+        # 转换为时间戳:
+        timeStamp = int(time.mktime(timeStruct))
+        return timeStamp
+
     result = re.search(r"(\d+)秒前", x)
     if result:
         period = (datetime.datetime.now() - datetime.timedelta(seconds=int(result[1])))

@@ -10,8 +10,8 @@
 #     http://scrapy.readthedocs.org/en/latest/topics/spider-middleware.html
 import os
 import sys
-COOKIE="ALF=1521730054; SCF=Au-0ncqPEUka5K9GGf6OW24CTp2jGe8nx00amFHVfbUvMQyCEP0vz7AVnBDHYy-c9gljzhNKp_YwAQthoFkg400.; SUB=_2A253iJQUDeRhGeRI6lEQ9irPwj-IHXVVcjxcrDV6PUJbktAKLVH-kW1NUt0ipZQnbyZHQ7TaRfx5o66K8mbzr-lz; SUBP=0033WrSXqPxfM725Ws9jqgMF55529P9D9W5QIV-4QSfrqpOpFqYT3zYh5JpX5K-hUgL.FozceKepSoB01Ke2dJLoIpjLxKnLBo-L1KqLxKqL1K-LB-eLxKBLBo.L12zt; SUHB=08JKkcc3czBQdz; _T_WM=62e68f78854306e8de177d63b9b27153; M_WEIBOCN_PARAMS=uicode%3D20000174%26featurecode%3D20000320%26fid%3Dhotword"
-URL="2613164393"
+COOKIE="_guid=78840338.2905812218561492500.1514201840258.124; _T_WM=2906f3bc4bc03e08ea0f10aa86ab8abb; ALF=1521827430; SCF=Ahvkk4EROXBPliCjihjH0S4P08I8Hpm63AdfAuNp4es5P_HAEjAav22cXfB98peQ5fxxRPvom_o7tAGZ01f26nI.; SUB=_2A253iil_DeRhGeRI6lEQ9irPwj-IHXVVdLc3rDV6PUJbktAKLUrzkW1NUt0ipW79udkZMWDsR6ZFRj316-_YMaT5; SUBP=0033WrSXqPxfM725Ws9jqgMF55529P9D9W5QIV-4QSfrqpOpFqYT3zYh5JpX5K-hUgL.FozceKepSoB01Ke2dJLoIpjLxKnLBo-L1KqLxKqL1K-LB-eLxKBLBo.L12zt; SUHB=0TPkKyKzEmdDUp; SSOLoginState=1519278383; monitor_count=19"
+URL="liuyifeiofficial"
 BASE_DIR = os.path.dirname(os.path.abspath(os.path.dirname(__file__)))
 sys.path.insert(0, os.path.join(BASE_DIR, 'sina'))
 BOT_NAME = 'sina'

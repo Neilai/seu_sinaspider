@@ -1,8 +1,8 @@
 # -*- coding: utf-8 -*-
 import scrapy
-import time
+import time,re
 from selenium import webdriver
-from items import SinaItem,SinaItemloader
+from items import SinaItem,SinaItemloader,processcook
 from urllib import parse
 
 class SinaspiderSpider(scrapy.Spider):
@@ -21,33 +21,61 @@ class SinaspiderSpider(scrapy.Spider):
         # self.browser = webdriver.Chrome(executable_path="D:/chromedriver.exe",chrome_options=chromeOptions)
         #     # self.browser.add_cookie(cook)
     def parse(self, response):
-        Sina_Item = SinaItem()
-        # likenum=response.xpath("//div[@tbinfo]//div[@class='WB_feed_handle']//em[contains(@class, 'W_ficon') and contains(@class, 'ficon_praised')]/following-sibling::em").extract()
-        # repeatnum=response.xpath("//div[@tbinfo]//div[@class='WB_feed_handle']//em[contains(@class, 'W_ficon') and contains(@class, 'ficon_forward')]/following-sibling::em").extract()
-        # commentnum=response.xpath("//div[@tbinfo]//div[@class='WB_feed_handle']//em[contains(@class, 'W_ficon') and contains(@class, 'ficon_repeat')]/following-sibling::em").extract()
-        nextpage=response.xpath("//div[@class='W_pages']/span/following-sibling::a/text()").extract()
-        # nexturl_part=response.xpath("//div[@class='W_pages']/span/following-sibling::a/@href").extract()[0]
-        # nexturl= parse.urljoin(response.url, nexturl_part)
-        item_loader = SinaItemloader(item=SinaItem(),response=response)
-        item_loader.add_value('cookie',self.settings.get("COOKIE"))
-        item_loader.add_xpath('datetime',"//div[@tbinfo]//div[@class='WB_detail']/div[contains(@class,'WB_from') and contains(@class,'S_txt2')]/a[1]/text()")
-        item_loader.add_xpath('likenum',"//div[@tbinfo]/div[@class='WB_feed_handle']//em[contains(@class, 'W_ficon') and contains(@class, 'ficon_praised')]/following-sibling::em/text()")
-        item_loader.add_xpath('repeatnum',"//div[@tbinfo]/div[@class='WB_feed_handle']//em[contains(@class, 'W_ficon') and contains(@class, 'ficon_forward')]/following-sibling::em/text()")
-        item_loader.add_xpath('commentnum',"//div[@tbinfo]/div[@class='WB_feed_handle']//em[contains(@class, 'W_ficon') and contains(@class, 'ficon_repeat')]/following-sibling::em/text()")
-        Sina_Item=item_loader.load_item()
-        yield Sina_Item
-        if nextpage:
-            nexturl_part = response.xpath("//div[@class='W_pages']/span/following-sibling::a/@href").extract()[0]
-            nexturl = parse.urljoin(response.url, nexturl_part)
-            yield scrapy.Request(nexturl,dont_filter=True,callback=self.parse)
+        # Sina_Item = SinaItem()
+        # # likenum=response.xpath("//div[@tbinfo]//div[@class='WB_feed_handle']//em[contains(@class, 'W_ficon') and contains(@class, 'ficon_praised')]/following-sibling::em").extract()
+        # # repeatnum=response.xpath("//div[@tbinfo]//div[@class='WB_feed_handle']//em[contains(@class, 'W_ficon') and contains(@class, 'ficon_forward')]/following-sibling::em").extract()
+        # # commentnum=response.xpath("//div[@tbinfo]//div[@class='WB_feed_handle']//em[contains(@class, 'W_ficon') and contains(@class, 'ficon_repeat')]/following-sibling::em").extract()
+        #
+        #
+        #
+        #
+        # nextpage=response.xpath("//div[@class='W_pages']/span/following-sibling::a/text()").extract()
+        # # nexturl_part=response.xpath("//div[@class='W_pages']/span/following-sibling::a/@href").extract()[0]
+        # # nexturl= parse.urljoin(response.url, nexturl_part)
+        # item_loader = SinaItemloader(item=SinaItem(),response=response)
+        # item_loader.add_value('cookie',self.settings.get("COOKIE"))
+        # item_loader.add_xpath('datetime',"//div[@tbinfo]//div[@class='WB_detail']/div[contains(@class,'WB_from') and contains(@class,'S_txt2')]/a[1]/text()")
+        # item_loader.add_xpath('likenum',"//div[@tbinfo]/div[@class='WB_feed_handle']//em[contains(@class, 'W_ficon') and contains(@class, 'ficon_praised')]/following-sibling::em/text()")
+        # item_loader.add_xpath('repeatnum',"//div[@tbinfo]/div[@class='WB_feed_handle']//em[contains(@class, 'W_ficon') and contains(@class, 'ficon_forward')]/following-sibling::em/text()")
+        # item_loader.add_xpath('commentnum',"//div[@tbinfo]/div[@class='WB_feed_handle']//em[contains(@class, 'W_ficon') and contains(@class, 'ficon_repeat')]/following-sibling::em/text()")
+        # Sina_Item=item_loader.load_item()
+        # yield Sina_Item
+        # if nextpage:
+        #     nexturl_part = response.xpath("//div[@class='W_pages']/span/following-sibling::a/@href").extract()[0]
+        #     nexturl = parse.urljoin(response.url, nexturl_part)
+        #     yield scrapy.Request(nexturl,dont_filter=True,callback=self.parse)
+
+        sina_item=SinaItem()
+        all=response.xpath('//div[@class="c"]//div[last()]').extract()
+        alltime=response.xpath('//div[@class="c"]//span[@class="ct"]/text()').extract()
+        result=re.search(r"(.*)来自",alltime[1])[1]
+        for i in range(len(all)):
+            sina_item["likenum"]=re.search(r"赞\[(\d+)\]",all[i])[1]
+            sina_item["repeatnum"]=re.search(r"转发\[(\d+)\]",all[i])[1]
+            sina_item["commentnum"]=re.search(r"评论\[(\d+)\]",all[i])[1]
+            sina_item["datetime"] =result=re.search(r"(.*)\xa0来自",alltime[i])[1]
+            sina_item["cookie"] = result = self.settings.get("COOKIE")
+            yield sina_item
+
 
     def start_requests(self):
-        chromeOptions = webdriver.ChromeOptions()
-        prefs = {"profile.managed_default_content_settings.images": 2}
-        chromeOptions.add_experimental_option("prefs", prefs)
-        self.browser = webdriver.Chrome(executable_path="D:/chromedriver.exe", chrome_options=chromeOptions)
-        # self.browser = webdriver.PhantomJS(executable_path="D:/seu_sinaspider/phantomjs/bin/phantomjs.exe")
-        yield scrapy.Request('https://www.weibo.com/',callback=self.loginsina)
+        # chromeOptions = webdriver.ChromeOptions()
+        # prefs = {"profile.managed_default_content_settings.images": 2}
+        # chromeOptions.add_experimental_option("prefs", prefs)
+        # self.browser = webdriver.Chrome(executable_path="D:/chromedriver.exe", chrome_options=chromeOptions)
+        # # self.browser = webdriver.PhantomJS(executable_path="D:/seu_sinaspider/phantomjs/bin/phantomjs.exe")
+        # yield scrapy.Request('https://www.weibo.com/',callback=self.loginsina)
+        self.cook = processcook(self.settings.get("COOKIE"))
+        yield scrapy.Request("https://weibo.cn/"+self.settings.get("URL"),cookies=self.cook,callback=self.generate_page)
+
+    def generate_page(self,response):
+        total=response.xpath('//*[@id="pagelist"]/form/div/text()').extract()[1].strip()
+        result=re.search("(\d+)/(\d+)",total)
+        total=int(result[2])
+        for i in range(total):
+            url="https://weibo.cn/" + self.settings.get("URL")+"?page="+str(i+1)
+            print(url)
+            yield scrapy.Request(url, dont_filter=True,cookies=self.cook,callback=self.parse)
 
     def loginsina(self,response):
         # time.sleep(10)

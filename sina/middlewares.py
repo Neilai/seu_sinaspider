@@ -64,17 +64,17 @@ class SinaSpiderMiddleware(object):
         # if spider.cnt==150:
         #     time.sleep(10)
         #     spider.cnt=0
-        if spider.name=='sinaspider':
-            spider.browser.get(request.url)
-            if spider.flag==1:
-                while 1:
-                    pre =spider.browser.execute_script("return document.body.scrollHeight;")
-                    spider.browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
-                    time.sleep(5)
-                    cur = spider.browser.execute_script("return document.body.scrollHeight;")
-                    if cur == pre:
-                        break
-            return HtmlResponse(url=spider.browser.current_url, body=spider.browser.page_source, encoding="utf-8",request=request)
+        # if spider.name=='sinaspider':
+        #     spider.browser.get(request.url)
+        #     if spider.flag==1:
+        #         while 1:
+        #             pre =spider.browser.execute_script("return document.body.scrollHeight;")
+        #             spider.browser.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+        #             time.sleep(5)
+        #             cur = spider.browser.execute_script("return document.body.scrollHeight;")
+        #             if cur == pre:
+        #                 break
+        #     return HtmlResponse(url=spider.browser.current_url, body=spider.browser.page_source, encoding="utf-8",request=request)
         # if spider.name == 'sinaspider5':
         #     spider.browser.get(request.url)
         #     while 1:
@@ -91,6 +91,8 @@ class SinaSpiderMiddleware(object):
         #         spider.browser.get(request.url)
         #         spider.flag=1
         #         return HtmlResponse(url=spider.browser.current_url, body=spider.browser.page_source, encoding="utf-8",request=request)
+        pass
+
 ip_list=['14.21.183.198','115.56.135.72','49.81.254.36','122.194.248.115','182.41.49.29']
 import random
 class RandomUserAgentMiddlware(object):

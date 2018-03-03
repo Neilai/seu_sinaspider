@@ -9,6 +9,7 @@ class SinaspiderSpider(scrapy.Spider):
     custom_settings = {
         'ITEM_PIPELINES': {'sina.pipelines.SinaPipeline': 100, },
     }
+
     name = 'sinaspider'
     flag=0
     allowed_domains = ['www.weibo.com']
@@ -74,7 +75,7 @@ class SinaspiderSpider(scrapy.Spider):
 
         # print(self.cook)
         # print(self.starturl)
-        yield scrapy.Request("https://weibo.cn/"+self.starturl,cookies=self.cook,callback=self.generate_page)
+        yield scrapy.Request("https://weibo.cn/u/"+self.starturl,cookies=self.cook,callback=self.generate_page)
 
     def generate_page(self,response):
         total=response.xpath('//*[@id="pagelist"]/form/div/text()').extract()[1].strip()
@@ -82,8 +83,7 @@ class SinaspiderSpider(scrapy.Spider):
         total=int(result[2])
         print(total)
         for i in range(total):
-            url="https://weibo.cn/" + self.starturl+"?page="+str(i+1)
-            print("!!!!!!!!!!",url)
+            url="https://weibo.cn/u/" + self.starturl+"?page="+str(i+1)
             yield scrapy.Request(url, dont_filter=True,cookies=self.cook,callback=self.parse)
 
     # def loginsina(self,response):

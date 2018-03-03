@@ -4,4 +4,4 @@ from scrapy.cmdline import execute
 import sys
 import os
 sys.path.append(os.path.abspath(os.path.dirname(__file__)))
-execute(['scrapy','crawl','sinaspider'])
+execute(['scrapy','crawl','sinaspider4'])

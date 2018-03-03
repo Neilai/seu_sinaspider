@@ -55,7 +55,7 @@ class Sinaspider2Spider(scrapy.Spider):
         else:
             self.page=1
         mid = response.meta.get('mid', '')
-        print(self.page)
+        print("!!!!!!",self.page)
         iterator =1
         while iterator <= self.page:
             url = self.baseurl+'&'+'id='+mid+'&' + 'page='+str(iterator)

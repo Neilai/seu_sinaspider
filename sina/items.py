@@ -132,7 +132,9 @@ class SinaItem4(scrapy.Item):
     fansname=scrapy.Field()
     fanslevel=scrapy.Field()
     fansparent=scrapy.Field()
-    pass
+    cookie = scrapy.Field()
+
+
 class Sina_Item3(scrapy.Item):
     follow=scrapy.Field()
     webnum=scrapy.Field()

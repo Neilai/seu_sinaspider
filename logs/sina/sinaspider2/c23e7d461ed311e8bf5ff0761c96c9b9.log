@@ -1,0 +1,360 @@
+2018-03-03 19:12:42 [scrapy.utils.log] INFO: Scrapy 1.4.0 started (bot: sina)
+2018-03-03 19:12:42 [scrapy.utils.log] INFO: Overridden settings: {'BOT_NAME': 'sina', 'DOWNLOAD_DELAY': 1.1, 'LOG_FILE': 'logs\\sina\\sinaspider2\\c23e7d461ed311e8bf5ff0761c96c9b9.log', 'NEWSPIDER_MODULE': 'sina.spiders', 'SPIDER_MODULES': ['sina.spiders']}
+2018-03-03 19:12:42 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2018-03-03 19:12:42 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['sina.middlewares.RandomUserAgentMiddlware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'sina.middlewares.SinaSpiderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2018-03-03 19:12:42 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2018-03-03 19:12:42 [scrapy.middleware] INFO: Enabled item pipelines:
+['sina.pipelines.SinaPipeline2']
+2018-03-03 19:12:42 [scrapy.core.engine] INFO: Spider opened
+2018-03-03 19:12:42 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2018-03-03 19:12:42 [sinaspider2] INFO: Spider opened: sinaspider2
+2018-03-03 19:12:42 [scrapy.extensions.telnet] DEBUG: Telnet console listening on 127.0.0.1:6023
+2018-03-03 19:12:44 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/3261134763/FFI8KxCv9?from=page_1006053261134763_profile&wvr=6&mod=weibotime&type=comment#_rnd1520071298974> (referer: None)
+2018-03-03 19:12:45 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=1> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=1>
+2018-03-03 19:12:46 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=1> (referer: None)
+2018-03-03 19:12:47 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=30> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=30>
+2018-03-03 19:12:48 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=29> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=29>
+2018-03-03 19:12:49 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=28> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=28>
+2018-03-03 19:12:51 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=27> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=27>
+2018-03-03 19:12:52 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=26> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=26>
+2018-03-03 19:12:53 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=25> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=25>
+2018-03-03 19:12:55 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=24> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=24>
+2018-03-03 19:12:57 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=23> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=23>
+2018-03-03 19:12:58 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=22> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=22>
+2018-03-03 19:12:59 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=21> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=21>
+2018-03-03 19:13:00 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=20> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=20>
+2018-03-03 19:13:02 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=19> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=19>
+2018-03-03 19:13:03 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18>
+2018-03-03 19:13:04 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=17> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=17>
+2018-03-03 19:13:05 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=16> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=16>
+2018-03-03 19:13:06 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=15> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=15>
+2018-03-03 19:13:08 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=30> (referer: None)
+2018-03-03 19:13:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=30>
+None
+2018-03-03 19:13:10 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=29> (referer: None)
+2018-03-03 19:13:10 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=29>
+None
+2018-03-03 19:13:11 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=28> (referer: None)
+2018-03-03 19:13:11 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=28>
+None
+2018-03-03 19:13:12 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=27> (referer: None)
+2018-03-03 19:13:12 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=27>
+None
+2018-03-03 19:13:14 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=26> (referer: None)
+2018-03-03 19:13:14 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=26>
+None
+2018-03-03 19:13:15 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=25> (referer: None)
+2018-03-03 19:13:16 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=25>
+None
+2018-03-03 19:13:16 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=24> (referer: None)
+2018-03-03 19:13:17 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=24>
+None
+2018-03-03 19:13:18 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=23> (referer: None)
+2018-03-03 19:13:18 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=23>
+None
+2018-03-03 19:13:19 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=22> (referer: None)
+2018-03-03 19:13:19 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=22>
+None
+2018-03-03 19:13:20 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=21> (referer: None)
+2018-03-03 19:13:21 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=21>
+None
+2018-03-03 19:13:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=20> (referer: None)
+2018-03-03 19:13:22 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=20>
+None
+2018-03-03 19:13:23 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=19> (referer: None)
+2018-03-03 19:13:23 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=19>
+None
+2018-03-03 19:13:25 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18> (referer: None)
+2018-03-03 19:13:25 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18>
+None
+2018-03-03 19:13:26 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=17> (referer: None)
+2018-03-03 19:13:26 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=17>
+None
+2018-03-03 19:13:27 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=16> (referer: None)
+2018-03-03 19:13:27 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=16>
+None
+2018-03-03 19:13:29 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=15> (referer: None)
+2018-03-03 19:13:29 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=15>
+None
+2018-03-03 19:13:30 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18177> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18177>
+2018-03-03 19:13:31 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18176> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18176>
+2018-03-03 19:13:32 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18175> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18175>
+2018-03-03 19:13:34 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18174> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18174>
+2018-03-03 19:13:35 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18173> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18173>
+2018-03-03 19:13:36 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18172> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18172>
+2018-03-03 19:13:38 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18171> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18171>
+2018-03-03 19:13:39 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18170> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18170>
+2018-03-03 19:13:41 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18169> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18169>
+2018-03-03 19:13:42 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18168> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18168>
+2018-03-03 19:13:42 [scrapy.extensions.logstats] INFO: Crawled 18 pages (at 18 pages/min), scraped 16 items (at 16 items/min)
+2018-03-03 19:13:44 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18167> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18167>
+2018-03-03 19:13:45 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18166> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18166>
+2018-03-03 19:13:46 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18165> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18165>
+2018-03-03 19:13:48 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18164> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18164>
+2018-03-03 19:13:49 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18163> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18163>
+2018-03-03 19:13:51 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18162> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18162>
+2018-03-03 19:13:54 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18177> (referer: None)
+2018-03-03 19:13:54 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18177>
+None
+2018-03-03 19:13:55 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18176> (referer: None)
+2018-03-03 19:13:55 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18176>
+None
+2018-03-03 19:13:57 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18175> (referer: None)
+2018-03-03 19:13:57 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18175>
+None
+2018-03-03 19:13:58 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18174> (referer: None)
+2018-03-03 19:13:58 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18174>
+None
+2018-03-03 19:14:00 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18173> (referer: None)
+2018-03-03 19:14:00 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18173>
+None
+2018-03-03 19:14:01 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18172> (referer: None)
+2018-03-03 19:14:01 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18172>
+None
+2018-03-03 19:14:02 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18171> (referer: None)
+2018-03-03 19:14:02 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18171>
+None
+2018-03-03 19:14:03 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18170> (referer: None)
+2018-03-03 19:14:04 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18170>
+None
+2018-03-03 19:14:05 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18169> (referer: None)
+2018-03-03 19:14:05 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18169>
+None
+2018-03-03 19:14:06 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18168> (referer: None)
+2018-03-03 19:14:06 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18168>
+None
+2018-03-03 19:14:08 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18167> (referer: None)
+2018-03-03 19:14:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18167>
+None
+2018-03-03 19:14:09 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18166> (referer: None)
+2018-03-03 19:14:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18166>
+None
+2018-03-03 19:14:11 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18165> (referer: None)
+2018-03-03 19:14:11 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18165>
+None
+2018-03-03 19:14:11 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18164> (referer: None)
+2018-03-03 19:14:12 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18164>
+None
+2018-03-03 19:14:13 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18163> (referer: None)
+2018-03-03 19:14:13 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18163>
+None
+2018-03-03 19:14:14 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18162> (referer: None)
+2018-03-03 19:14:14 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18161> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18161>
+2018-03-03 19:14:14 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18162>
+None
+2018-03-03 19:14:16 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18160> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18160>
+2018-03-03 19:14:17 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18159> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18159>
+2018-03-03 19:14:19 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18158> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18158>
+2018-03-03 19:14:20 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18157> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18157>
+2018-03-03 19:14:22 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18156> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18156>
+2018-03-03 19:14:24 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18155> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18155>
+2018-03-03 19:14:25 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18154> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18154>
+2018-03-03 19:14:26 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18153> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18153>
+2018-03-03 19:14:27 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18152> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18152>
+2018-03-03 19:14:29 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18151> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18151>
+2018-03-03 19:14:30 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18150> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18150>
+2018-03-03 19:14:32 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18149> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18149>
+2018-03-03 19:14:33 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18148> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18148>
+2018-03-03 19:14:34 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18147> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18147>
+2018-03-03 19:14:35 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18146> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18146>
+2018-03-03 19:14:37 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18161> (referer: None)
+2018-03-03 19:14:37 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18161>
+None
+2018-03-03 19:14:38 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18160> (referer: None)
+2018-03-03 19:14:39 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18160>
+None
+2018-03-03 19:14:40 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18159> (referer: None)
+2018-03-03 19:14:40 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18159>
+None
+2018-03-03 19:14:41 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18158> (referer: None)
+2018-03-03 19:14:41 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18158>
+None
+2018-03-03 19:14:42 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18157> (referer: None)
+2018-03-03 19:14:42 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18157>
+None
+2018-03-03 19:14:42 [scrapy.extensions.logstats] INFO: Crawled 39 pages (at 21 pages/min), scraped 37 items (at 21 items/min)
+2018-03-03 19:14:43 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18156> (referer: None)
+2018-03-03 19:14:43 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18156>
+None
+2018-03-03 19:14:44 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18155> (referer: None)
+2018-03-03 19:14:44 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18155>
+None
+2018-03-03 19:14:45 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18154> (referer: None)
+2018-03-03 19:14:45 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18154>
+None
+2018-03-03 19:14:47 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18153> (referer: None)
+2018-03-03 19:14:47 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18153>
+None
+2018-03-03 19:14:48 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18152> (referer: None)
+2018-03-03 19:14:48 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18152>
+None
+2018-03-03 19:14:50 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18151> (referer: None)
+2018-03-03 19:14:50 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18151>
+None
+2018-03-03 19:14:51 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18150> (referer: None)
+2018-03-03 19:14:51 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18150>
+None
+2018-03-03 19:14:53 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18149> (referer: None)
+2018-03-03 19:14:53 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18149>
+None
+2018-03-03 19:14:54 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18148> (referer: None)
+2018-03-03 19:14:54 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18148>
+None
+2018-03-03 19:14:56 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18147> (referer: None)
+2018-03-03 19:14:56 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18147>
+None
+2018-03-03 19:14:57 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18146> (referer: None)
+2018-03-03 19:14:57 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18146>
+None
+2018-03-03 19:14:58 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18145> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18145>
+2018-03-03 19:14:59 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18144> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18144>
+2018-03-03 19:15:00 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18143> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18143>
+2018-03-03 19:15:01 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18142> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18142>
+2018-03-03 19:15:02 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18141> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18141>
+2018-03-03 19:15:03 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18140> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18140>
+2018-03-03 19:15:05 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18139> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18139>
+2018-03-03 19:15:06 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18138> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18138>
+2018-03-03 19:15:08 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18137> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18137>
+2018-03-03 19:15:09 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18136> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18136>
+2018-03-03 19:15:10 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18135> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18135>
+2018-03-03 19:15:12 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18134> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18134>
+2018-03-03 19:15:13 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18133> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18133>
+2018-03-03 19:15:15 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18132> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18132>
+2018-03-03 19:15:16 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18131> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18131>
+2018-03-03 19:15:17 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18130> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18130>
+2018-03-03 19:15:20 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18145> (referer: None)
+2018-03-03 19:15:20 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18145>
+None
+2018-03-03 19:15:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18144> (referer: None)
+2018-03-03 19:15:21 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18144>
+None
+2018-03-03 19:15:23 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18143> (referer: None)
+2018-03-03 19:15:23 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18143>
+None
+2018-03-03 19:15:24 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18142> (referer: None)
+2018-03-03 19:15:24 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18142>
+None
+2018-03-03 19:15:25 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18141> (referer: None)
+2018-03-03 19:15:26 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18141>
+None
+2018-03-03 19:15:26 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18140> (referer: None)
+2018-03-03 19:15:26 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18140>
+None
+2018-03-03 19:15:28 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18139> (referer: None)
+2018-03-03 19:15:28 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18139>
+None
+2018-03-03 19:15:29 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18138> (referer: None)
+2018-03-03 19:15:30 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18138>
+None
+2018-03-03 19:15:31 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18137> (referer: None)
+2018-03-03 19:15:31 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18137>
+None
+2018-03-03 19:15:32 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18136> (referer: None)
+2018-03-03 19:15:33 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18136>
+None
+2018-03-03 19:15:34 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18135> (referer: None)
+2018-03-03 19:15:34 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18135>
+None
+2018-03-03 19:15:35 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18134> (referer: None)
+2018-03-03 19:15:35 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18134>
+None
+2018-03-03 19:15:36 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18133> (referer: None)
+2018-03-03 19:15:36 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18133>
+None
+2018-03-03 19:15:38 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18132> (referer: None)
+2018-03-03 19:15:38 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18132>
+None
+2018-03-03 19:15:39 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18131> (referer: None)
+2018-03-03 19:15:39 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18131>
+None
+2018-03-03 19:15:41 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18130> (referer: None)
+2018-03-03 19:15:41 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18130>
+None
+2018-03-03 19:15:41 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18129> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18129>
+2018-03-03 19:15:42 [scrapy.extensions.logstats] INFO: Crawled 66 pages (at 27 pages/min), scraped 64 items (at 27 items/min)
+2018-03-03 19:15:43 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18128> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18128>
+2018-03-03 19:15:44 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18127> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18127>
+2018-03-03 19:15:46 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18126> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18126>
+2018-03-03 19:15:47 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18125> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18125>
+2018-03-03 19:15:49 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18124> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18124>
+2018-03-03 19:15:50 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18123> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18123>
+2018-03-03 19:15:52 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18122> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18122>
+2018-03-03 19:15:53 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18121> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18121>
+2018-03-03 19:15:55 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18120> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18120>
+2018-03-03 19:15:56 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18119> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18119>
+2018-03-03 19:15:57 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18118> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18118>
+2018-03-03 19:15:59 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18117> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18117>
+2018-03-03 19:16:01 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18116> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18116>
+2018-03-03 19:16:02 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18115> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18115>
+2018-03-03 19:16:03 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18114> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18114>
+2018-03-03 19:16:06 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18129> (referer: None)
+2018-03-03 19:16:06 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18129>
+None
+2018-03-03 19:16:08 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18128> (referer: None)
+2018-03-03 19:16:08 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18128>
+None
+2018-03-03 19:16:09 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18127> (referer: None)
+2018-03-03 19:16:09 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18127>
+None
+2018-03-03 19:16:10 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18126> (referer: None)
+2018-03-03 19:16:10 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18126>
+None
+2018-03-03 19:16:12 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18125> (referer: None)
+2018-03-03 19:16:12 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18125>
+None
+2018-03-03 19:16:13 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18124> (referer: None)
+2018-03-03 19:16:13 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18124>
+None
+2018-03-03 19:16:15 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18123> (referer: None)
+2018-03-03 19:16:15 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18123>
+None
+2018-03-03 19:16:17 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18122> (referer: None)
+2018-03-03 19:16:17 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18122>
+None
+2018-03-03 19:16:18 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18121> (referer: None)
+2018-03-03 19:16:18 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18121>
+None
+2018-03-03 19:16:19 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18120> (referer: None)
+2018-03-03 19:16:19 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18120>
+None
+2018-03-03 19:16:20 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18119> (referer: None)
+2018-03-03 19:16:20 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18119>
+None
+2018-03-03 19:16:21 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18118> (referer: None)
+2018-03-03 19:16:21 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18118>
+None
+2018-03-03 19:16:22 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18117> (referer: None)
+2018-03-03 19:16:22 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18117>
+None
+2018-03-03 19:16:24 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18116> (referer: None)
+2018-03-03 19:16:24 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18116>
+None
+2018-03-03 19:16:25 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18115> (referer: None)
+2018-03-03 19:16:25 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18115>
+None
+2018-03-03 19:16:26 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18114> (referer: None)
+2018-03-03 19:16:26 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18113> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18113>
+2018-03-03 19:16:26 [scrapy.core.scraper] DEBUG: Scraped from <200 https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18114>
+None
+2018-03-03 19:16:28 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18112> from <GET http://weibo.com/aj/v6/mblog/info/big?ajwvr=6&id=4199411268012827&page=18112>

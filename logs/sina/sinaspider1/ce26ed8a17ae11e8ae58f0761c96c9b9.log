@@ -1,0 +1,158 @@
+2018-02-22 17:00:25 [scrapy.utils.log] INFO: Scrapy 1.4.0 started (bot: sina)
+2018-02-22 17:00:25 [scrapy.utils.log] INFO: Overridden settings: {'BOT_NAME': 'sina', 'DOWNLOAD_DELAY': 1.1, 'LOG_FILE': 'logs\\sina\\sinaspider1\\ce26ed8a17ae11e8ae58f0761c96c9b9.log', 'NEWSPIDER_MODULE': 'sina.spiders', 'SPIDER_MODULES': ['sina.spiders']}
+2018-02-22 17:00:25 [scrapy.middleware] INFO: Enabled extensions:
+['scrapy.extensions.corestats.CoreStats',
+ 'scrapy.extensions.telnet.TelnetConsole',
+ 'scrapy.extensions.logstats.LogStats']
+2018-02-22 17:00:25 [scrapy.middleware] INFO: Enabled downloader middlewares:
+['sina.middlewares.RandomUserAgentMiddlware',
+ 'scrapy.downloadermiddlewares.httpauth.HttpAuthMiddleware',
+ 'scrapy.downloadermiddlewares.downloadtimeout.DownloadTimeoutMiddleware',
+ 'scrapy.downloadermiddlewares.defaultheaders.DefaultHeadersMiddleware',
+ 'scrapy.downloadermiddlewares.useragent.UserAgentMiddleware',
+ 'sina.middlewares.SinaSpiderMiddleware',
+ 'scrapy.downloadermiddlewares.retry.RetryMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.MetaRefreshMiddleware',
+ 'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware',
+ 'scrapy.downloadermiddlewares.redirect.RedirectMiddleware',
+ 'scrapy.downloadermiddlewares.cookies.CookiesMiddleware',
+ 'scrapy.downloadermiddlewares.httpproxy.HttpProxyMiddleware',
+ 'scrapy.downloadermiddlewares.stats.DownloaderStats']
+2018-02-22 17:00:25 [scrapy.middleware] INFO: Enabled spider middlewares:
+['scrapy.spidermiddlewares.httperror.HttpErrorMiddleware',
+ 'scrapy.spidermiddlewares.offsite.OffsiteMiddleware',
+ 'scrapy.spidermiddlewares.referer.RefererMiddleware',
+ 'scrapy.spidermiddlewares.urllength.UrlLengthMiddleware',
+ 'scrapy.spidermiddlewares.depth.DepthMiddleware']
+2018-02-22 17:00:25 [scrapy.middleware] INFO: Enabled item pipelines:
+['sina.pipelines.SinaPipeline1']
+2018-02-22 17:00:25 [scrapy.core.engine] INFO: Spider opened
+2018-02-22 17:00:25 [scrapy.extensions.logstats] INFO: Crawled 0 pages (at 0 pages/min), scraped 0 items (at 0 items/min)
+2018-02-22 17:00:25 [sinaspider1] INFO: Spider opened: sinaspider1
+2018-02-22 17:00:25 [scrapy.extensions.telnet] DEBUG: Telnet console listening on 127.0.0.1:6023
+2018-02-22 17:00:28 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/1682075684/G4hDRmfw0?ref=home&rid=8_0_8_2633218816887679725> (referer: None)
+2018-02-22 17:00:28 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/comment/big?ajwvr=6&id=4210211315302860&page=1> from <GET http://weibo.com/aj/v6/comment/big?ajwvr=6&id=4210211315302860&page=1>
+2018-02-22 17:00:30 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/comment/big?ajwvr=6&id=4210211315302860&page=1> (referer: None)
+2018-02-22 17:00:31 [scrapy.downloadermiddlewares.redirect] DEBUG: Redirecting (301) to <GET https://weibo.com/aj/v6/comment/big?ajwvr=6&id=4210211315302860&page=1> from <GET http://weibo.com/aj/v6/comment/big?ajwvr=6&id=4210211315302860&page=1>
+2018-02-22 17:00:33 [scrapy.core.engine] DEBUG: Crawled (200) <GET https://weibo.com/aj/v6/comment/big?ajwvr=6&id=4210211315302860&page=1> (referer: None)
+2018-02-22 17:00:33 [scrapy.core.scraper] ERROR: Error processing {'comment': ['知恩的星星糖：孝利欧尼和社长好暖知恩拍戏辛苦了 注意休息啊宝宝',
+             '葬花积雪：#IU# \xa0\xa0真可爱️💫',
+             'olindaloveU：謝謝孝利夫婦有休息時去看看他們吧！在外打工的小孩',
+             '又又ks：好棒\xa0\xa0\xa0屋里厨房阿姨 在外打工不容易啊',
+             '煦叔：好暖啊',
+             '珊姐在此：暖心',
+             '知恩家的糖：谢谢孝利欧尼和尚顺欧巴',
+             '贾雷斯：眼袋好重',
+             '早睡很难O：#iu我的大叔# #IU#',
+             'L1zhEnol：真是太可爱了emmm',
+             '丙子叁末：知恩太好看了',
+             '北纬已北201507：可爱',
+             '哎呦酱IU2：#IU# #iu我的大叔#\xa0\xa0真是可爱️💫',
+             '油炸小鱼：啊啊啊我姐姐笑的好温柔',
+             '懵氏：有联系就超开心'],
+ 'commentname': ['知恩的星星糖',
+                 '葬花积雪',
+                 'olindaloveU',
+                 '又又ks',
+                 '煦叔',
+                 '珊姐在此',
+                 '知恩家的糖',
+                 '贾雷斯',
+                 '早睡很难O',
+                 'L1zhEnol',
+                 '丙子叁末',
+                 '北纬已北201507',
+                 '哎呦酱IU2',
+                 '油炸小鱼',
+                 '懵氏'],
+ 'cookie': 'SINAGLOBAL=7853109778370.708.1474885718073; '
+           'UM_distinctid=15e548483790-07bd8ed06-722e3659-e1000-15e5484837a164; '
+           '__guid=15428400.4096259240573687000.1512560153542.3306; '
+           '_ga=GA1.2.97968628.1517457987; '
+           '__gads=ID=4256a325938dd17b:T=1517457989:S=ALNI_MbyIb-z2FPAAkxUpVTblEgoJP8LVQ; '
+           'wvr=6; wb_timefeed_2613164393=1; un=1131894367@qq.com; '
+           'TC-Ugrow-G0=5e22903358df63c5e3fd2c757419b456; '
+           'SSOLoginState=1519235430; '
+           'SCF=Ahvkk4EROXBPliCjihjH0S4P08I8Hpm63AdfAuNp4es50kWoJ8Nlg9wNRxZgo8loz5TcbA75epk3D0CbaBEDeEU.; '
+           'SUB=_2A253icEPDeRhGeRI6lEQ9irPwj-IHXVU_rXHrDV8PUNbmtANLWvfkW9NUt0ipYdiA6Am_x0RdKNuYPzyRlE92OkO; '
+           'SUBP=0033WrSXqPxfM725Ws9jqgMF55529P9D9W5QIV-4QSfrqpOpFqYT3zYh5JpX5KMhUgL.FozceKepSoB01Ke2dJLoIpjLxKnLBo-L1KqLxKqL1K-LB-eLxKBLBo.L12zt; '
+           'SUHB=0N2EAKzxtz_g9U; ALF=1550771428; '
+           'TC-V5-G0=2bdac3b437dd23e235b79a3d6922ea06; '
+           '_s_tentry=login.sina.com.cn; '
+           'Apache=6694196636331.326.1519235437722; '
+           'ULV=1519235438019:380:14:5:6694196636331.326.1519235437722:1519215645359; '
+           'TC-Page-G0=c9fb286cd873ae77f97ce98d19abfb61; '
+           'YF-V5-G0=c072c6ac12a0526ff9af4f0716396363; '
+           'YF-Page-G0=0dccd34751f5184c59dfe559c12ac40a; '
+           'YF-Ugrow-G0=169004153682ef91866609488943c77f; '
+           'UOR=,weibo.com,spr_web_360_hao360_weibo_t001; monitor_count=46',
+ 'datetime': ['第79楼 5分钟前',
+              '第78楼 5分钟前',
+              '第77楼 18分钟前',
+              '第76楼 44分钟前',
+              '第75楼 47分钟前',
+              '第74楼 47分钟前',
+              '第73楼 55分钟前',
+              '第72楼 55分钟前',
+              '第71楼 今天 15:34',
+              '第70楼 今天 15:25',
+              '第69楼 今天 15:25',
+              '第68楼 今天 15:16',
+              '第67楼 今天 15:09',
+              '第66楼 今天 15:05',
+              '第65楼 今天 14:59'],
+ 'likenum': ['0',
+             '0',
+             '0',
+             '1',
+             '0',
+             '1',
+             '1',
+             '0',
+             '0',
+             '0',
+             '0',
+             '0',
+             '0',
+             '1',
+             '0']}
+Traceback (most recent call last):
+  File "c:\users\notebook\appdata\local\programs\python\python36-32\lib\site-packages\twisted\internet\defer.py", line 653, in _runCallbacks
+    current.result = callback(current.result, *args, **kw)
+  File "C:\Users\Notebook\Desktop\spider\seu_sinaspider\sina\pipelines.py", line 50, in process_item
+    self.cursor.execute(insert_sql,(item["commentname"][index], item["likenum"][index], item["comment"][index],int(processdatetime(item["datetime"][index]))))
+  File "c:\users\notebook\appdata\local\programs\python\python36-32\lib\site-packages\MySQLdb\cursors.py", line 250, in execute
+    self.errorhandler(self, exc, value)
+  File "c:\users\notebook\appdata\local\programs\python\python36-32\lib\site-packages\MySQLdb\connections.py", line 50, in defaulterrorhandler
+    raise errorvalue
+  File "c:\users\notebook\appdata\local\programs\python\python36-32\lib\site-packages\MySQLdb\cursors.py", line 247, in execute
+    res = self._query(query)
+  File "c:\users\notebook\appdata\local\programs\python\python36-32\lib\site-packages\MySQLdb\cursors.py", line 411, in _query
+    rowcount = self._do_query(q)
+  File "c:\users\notebook\appdata\local\programs\python\python36-32\lib\site-packages\MySQLdb\cursors.py", line 374, in _do_query
+    db.query(q)
+  File "c:\users\notebook\appdata\local\programs\python\python36-32\lib\site-packages\MySQLdb\connections.py", line 292, in query
+    _mysql.connection.query(self, query)
+_mysql_exceptions.OperationalError: (1366, "Incorrect string value: '\\xF0\\x9F\\x92\\xAB' for column 'comment' at row 1")
+2018-02-22 17:00:33 [scrapy.core.engine] INFO: Closing spider (finished)
+2018-02-22 17:00:33 [scrapy.statscollectors] INFO: Dumping Scrapy stats:
+{'downloader/request_bytes': 7336,
+ 'downloader/request_count': 5,
+ 'downloader/request_method_count/GET': 5,
+ 'downloader/response_bytes': 33166,
+ 'downloader/response_count': 5,
+ 'downloader/response_status_count/200': 3,
+ 'downloader/response_status_count/301': 2,
+ 'finish_reason': 'finished',
+ 'finish_time': datetime.datetime(2018, 2, 22, 9, 0, 33, 736102),
+ 'log_count/DEBUG': 6,
+ 'log_count/ERROR': 1,
+ 'log_count/INFO': 8,
+ 'request_depth_max': 2,
+ 'response_received_count': 3,
+ 'scheduler/dequeued': 5,
+ 'scheduler/dequeued/memory': 5,
+ 'scheduler/enqueued': 5,
+ 'scheduler/enqueued/memory': 5,
+ 'start_time': datetime.datetime(2018, 2, 22, 9, 0, 25, 684589)}
+2018-02-22 17:00:33 [scrapy.core.engine] INFO: Spider closed (finished)

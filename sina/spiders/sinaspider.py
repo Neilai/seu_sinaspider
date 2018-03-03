@@ -72,41 +72,42 @@ class SinaspiderSpider(scrapy.Spider):
         # print(self.settings.get("COOKIE"))
         # self.cook = processcook(self.settings.get("COOKIE"))
 
-        print(self.cook)
-        print(self.starturl)
-        yield scrapy.Request("https://weibo.cn/"+self.settings.get("URL"),cookies=self.cook,callback=self.generate_page)
+        # print(self.cook)
+        # print(self.starturl)
+        yield scrapy.Request("https://weibo.cn/"+self.starturl,cookies=self.cook,callback=self.generate_page)
 
     def generate_page(self,response):
         total=response.xpath('//*[@id="pagelist"]/form/div/text()').extract()[1].strip()
         result=re.search("(\d+)/(\d+)",total)
         total=int(result[2])
+        print(total)
         for i in range(total):
             url="https://weibo.cn/" + self.starturl+"?page="+str(i+1)
-            print(url)
+            print("!!!!!!!!!!",url)
             yield scrapy.Request(url, dont_filter=True,cookies=self.cook,callback=self.parse)
 
-    def loginsina(self,response):
-        # time.sleep(10)
-        # username = self.browser.find_element_by_xpath('//*[@id="loginname"]')
-        # password = self.browser.find_element_by_xpath('//*[@id="pl_login_form"]/div/div[3]/div[2]/div/input')
-        # login = self.browser.find_element_by_xpath('''//*[@id="pl_login_form"]/div/div[3]/div[6]/a''')
-        # username.send_keys("1131894367@qq.com")  # 此处填入用户名
-        # password.send_keys("laijingzhi")  # 此处填入密码
-        # login.click()
-        # time.sleep(15)
-        # self.flag=1
-        # for url in self.start_urls:
-        #     yield scrapy.Request(url,dont_filter=True,callback=self.parse)
-        # a = (self.settings.get("COOKIE_URL").split('|')[0]).split(";")
-        cook=self.settings.get("COOKIE").split(";")
-        result_dic = {}
-        for each in cook:
-            result_dic = {'domain': '.weibo.com', 'httpOnly': False, 'path': '/', 'secure': False, }
-            result = each.split("=")
-            result_dic['name'] = result[0].strip()
-            result_dic['value'] = result[1].strip()
-            self.browser.add_cookie(result_dic)
-        self.flag = 1
-        yield scrapy.Request(self.settings.get("URL"), dont_filter="true",callback=self.parse)
-
+    # def loginsina(self,response):
+    #     # time.sleep(10)
+    #     # username = self.browser.find_element_by_xpath('//*[@id="loginname"]')
+    #     # password = self.browser.find_element_by_xpath('//*[@id="pl_login_form"]/div/div[3]/div[2]/div/input')
+    #     # login = self.browser.find_element_by_xpath('''//*[@id="pl_login_form"]/div/div[3]/div[6]/a''')
+    #     # username.send_keys("1131894367@qq.com")  # 此处填入用户名
+    #     # password.send_keys("laijingzhi")  # 此处填入密码
+    #     # login.click()
+    #     # time.sleep(15)
+    #     # self.flag=1
+    #     # for url in self.start_urls:
+    #     #     yield scrapy.Request(url,dont_filter=True,callback=self.parse)
+    #     # a = (self.settings.get("COOKIE_URL").split('|')[0]).split(";")
+    #     cook=self.settings.get("COOKIE").split(";")
+    #     result_dic = {}
+    #     for each in cook:
+    #         result_dic = {'domain': '.weibo.com', 'httpOnly': False, 'path': '/', 'secure': False, }
+    #         result = each.split("=")
+    #         result_dic['name'] = result[0].strip()
+    #         result_dic['value'] = result[1].strip()
+    #         self.browser.add_cookie(result_dic)
+    #     self.flag = 1
+    #     yield scrapy.Request(self.settings.get("URL"), dont_filter="true",callback=self.parse)
+    #
 

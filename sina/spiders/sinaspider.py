@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import scrapy
 import time,re
-from selenium import webdriver
+# from selenium import webdriver
 from items import SinaItem,SinaItemloader,processcook
 from urllib import parse
 
@@ -83,7 +83,7 @@ class SinaspiderSpider(scrapy.Spider):
         total=int(result[2])
         print(total)
         for i in range(total):
-            url="https://weibo.cn/u/" + self.starturl+"?page="+str(i+1)
+            url="https://weibo.cn/" + self.starturl+"?page="+str(i+1)
             yield scrapy.Request(url, dont_filter=True,cookies=self.cook,callback=self.parse)
 
     # def loginsina(self,response):

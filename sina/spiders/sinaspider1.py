@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 import scrapy
 import time
-from selenium import webdriver
+# from selenium import webdriver
 from scrapy.selector import Selector
 from items import SinaItem1,getnum,stripspace,deletespace,processcook,processdatetime
 import json

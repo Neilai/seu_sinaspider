@@ -12,17 +12,17 @@ from items import processdatetime
 class SinaPipeline(object):
     def __init__(self):
 
-        self.conn = MySQLdb.connect('127.0.0.1', 'root', '19971008', 'sina_spider', charset="utf8", use_unicode=True)
-        self.cursor = self.conn.cursor()
+        # self.conn = MySQLdb.connect('127.0.0.1', 'root', '19971008', 'sina_spider', charset="utf8", use_unicode=True)
+        # self.cursor = self.conn.cursor()
 
         self.myredis=r = redis.Redis(host='127.0.0.1', port=6379)
     def process_item(self, item, spider):
-        insert_sql = """
-                   insert into sina(likenum,commentnum,repeatnum,datetime)
-                   VALUES (%s, %s, %s,%s)
-               """
-        self.cursor.execute(insert_sql, (int(item["likenum"]),int(item["commentnum"]), int(item["repeatnum"]),int(processdatetime(item["datetime"]))))
-        self.conn.commit()
+        # insert_sql = """
+        #            insert into sina(likenum,commentnum,repeatnum,datetime)
+        #            VALUES (%s, %s, %s,%s)
+        #        """
+        # self.cursor.execute(insert_sql, (int(item["likenum"]),int(item["commentnum"]), int(item["repeatnum"]),int(processdatetime(item["datetime"]))))
+        # self.conn.commit()
         self.myredis.rpush(item["cookie"]+"likenum",item["likenum"])
         self.myredis.rpush(item["cookie"]+"commentnum",item["commentnum"])
         self.myredis.rpush(item["cookie"]+"datetime",processdatetime(item["datetime"]))
@@ -65,8 +65,8 @@ class SinaPipeline2(object):
 
         cnt = len(item['repeatnum'])
         for index in range(cnt):
-            self.cursor.execute(insert_sql,(item["repeatname"][index], item["repeatnum"][index],int(processdatetime(item["datetime"][index]))))
-            self.conn.commit()
+            # self.cursor.execute(insert_sql,(item["repeatname"][index], item["repeatnum"][index],int(processdatetime(item["datetime"][index]))))
+            # self.conn.commit()
 
             self.myredis.rpush(item["cookie"] + "repeatnum2", item["repeatnum"][index])
             self.myredis.rpush(item["cookie"] + "datetime2", processdatetime(item["datetime"][index]))
@@ -105,8 +105,8 @@ class SinaPipeline4(object):
                   """
         cnt = len(item['fanslevel'])
         for index in range(cnt):
-            self.cursor.execute(insert_sql,(item["fansparent"][index], item["fansname"][index], item["fanslevel"][index]))
-            self.conn.commit()
+            # self.cursor.execute(insert_sql,(item["fansparent"][index], item["fansname"][index], item["fanslevel"][index]))
+            # self.conn.commit()
 
             self.myredis.rpush(item["cookie"] + "fansparent4", item["fansparent"][index])
             self.myredis.rpush(item["cookie"] + "fansname4", (item["fansname"][index]))
